@@ -13,6 +13,8 @@ import { MdEmail } from 'react-icons/md'
 import { AiOutlineCaretDown } from 'react-icons/ai'
 import { IconContext } from "react-icons";
 
+
+
 interface experienceItemsProps {
   from: string;
   to: string;
@@ -121,8 +123,12 @@ const projectItems: Array<projectItemsProps> = [
   },
 ]
 
+
+
 const Home: NextPage = () => {
 
+  const [open, setOpen] = useState<string>()
+  
   return (
     <Layout title="Jason Chan">
 
@@ -142,26 +148,26 @@ const Home: NextPage = () => {
               <div className={`font-thin text-xl pb-4 flex items-center ${styles.titletext}`}>
                 <div className='flex gap-x-4'>
                   <IconContext.Provider value={{ color: "white", size: "0.8em", className: "cursor-pointer" }}>
-                    <Link href="https://github.com/jasonchanhk">
+                    <Link passHref href="https://github.com/jasonchanhk">
                       <div className='w-8 h-8 rounded-full bg-amber-800 hover:bg-amber-800/80 active:bg-amber-900 flex justify-center items-center cursor-pointer'>
                         <FiGithub />
                       </div>
                     </Link>
 
-                    <Link href="https://www.linkedin.com/in/jason-chan-361266217/">
+                    <Link passHref href="https://www.linkedin.com/in/jason-chan-361266217/">
                       <div className='w-8 h-8 rounded-full bg-amber-800 hover:bg-amber-800/80 active:bg-amber-900 flex justify-center items-center cursor-pointer'>
                         <FiLinkedin />
                       </div>
 
                     </Link>
 
-                    <Link href="https://www.instagram.com/chanjky97/">
+                    <Link passHref href="https://www.instagram.com/chanjky97/">
                       <div className='w-8 h-8 rounded-full bg-amber-800 hover:bg-amber-800/80 active:bg-amber-900 flex justify-center items-center cursor-pointer'>
                         <FiInstagram />
                       </div>
                     </Link>
 
-                    <Link href="https://twitter.com/JC_hkuk">
+                    <Link passHref href="https://twitter.com/JC_hkuk">
                       <div className='w-8 h-8 rounded-full bg-amber-800 hover:bg-amber-800/80 active:bg-amber-900 flex justify-center items-center cursor-pointer'>
                         <FiTwitter />
                       </div>
@@ -251,10 +257,6 @@ const Home: NextPage = () => {
             <div className='flex-1'>
               <div className={`text-amber-800 font-semibold text-2xl py-4 tracking-wider ${styles.titletext}`}>History</div>
               {experienceItems.map(({ from, to, title, place, skills }, index) => {
-
-                const [open, setOpen] = useState<boolean>(false)
-
-
                 return (
                   <div key={index} className='text-amber-800'>
                     <div className='h-px w-full bg-amber-800'></div>
@@ -264,11 +266,11 @@ const Home: NextPage = () => {
                         <div className='flex justify-between items-center'>
                           <h1>{title}</h1>
                           <IconContext.Provider value={{ size: "0.8em", className: "cursor-pointer md:inline-block hidden" }}>
-                            {skills && <div onClick={() => setOpen(!open)}><AiOutlineCaretDown /></div>}
+                            {skills && <div onClick={() => setOpen(title)}><AiOutlineCaretDown /></div>}
                           </IconContext.Provider>
                         </div>
                         <h1 className='text-base font-light pt-1'>{place}</h1>
-                        {open && <ul className={`pl-6 list-disc mt-4 md:block hidden `}>
+                        {open === title && <ul className={`pl-6 list-disc mt-4 md:block hidden `}>
                           {skills && skills.map((string, index) => {
                             return <li className={`font-light text-sm`} key={index}>{string}</li>
                           })
@@ -298,7 +300,7 @@ const Home: NextPage = () => {
                         <div className='font-light text-sm pt-1 pb-4'>{description}</div>
                       </div>
                       <div className='flex justify-center py-5 basis-1/6'>
-                        <Link href={`${link}`}>
+                        <Link passHref href={`${link}`}>
                           <div className='border border-amber-50 hover:bg-amber-800/10 active:bg-amber-800/20  w-10 h-10 rounded-full flex items-center justify-center cursor-pointer'>
                             <IconContext.Provider value={{ color: "rgb(255 251 235)", size: "1em", className: 'hover: text-amber-800' }}>
                               <IoChevronForward />
@@ -309,7 +311,7 @@ const Home: NextPage = () => {
                     </div>
                     {image ?
                       <div className='relative w-full h-72 rounded-md shadow-lg shadow-amber-800/50 cursor-pointer hover:shadow-amber-800/70 active:shadow-amber-800'>
-                        <Link href={`${link}`}>
+                        <Link passHref href={`${link}`}>
                           <Image
                             src={image}
                             alt={name}
@@ -356,7 +358,7 @@ const Home: NextPage = () => {
                     </IconContext.Provider>
                   </div>
 
-                  <Link href="https://www.facebook.com/jason.chan.7">
+                  <Link passHref href="https://www.facebook.com/jason.chan.7">
                     <div className='flex items-center border border-amber-800 rounded-full w-fit cursor-pointer hover:bg-amber-800/10 active:bg-amber-800/20 '>
                       <div className='w-8 h-8 rounded-full bg-amber-800 flex justify-center items-center'>
                         <FaFacebookF />
