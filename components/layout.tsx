@@ -63,7 +63,11 @@ const Layout = ({ children, title }: Props) => {
                                 )
                             })
                         }
-                        <button className='px-4 py-2 border rounded-md border-amber-800 font-medium hover:text-amber-800/60 hover:border-amber-800/60 active:text-amber-900 active:border-amber-900'>Resume</button>
+                        <a href='Jason Chan Resume.pdf'>
+                            <button className='px-4 py-2 border rounded-md border-amber-800 font-medium hover:text-amber-800/60 hover:border-amber-800/60 active:text-amber-900 active:border-amber-900'>
+                                Resume
+                            </button>
+                        </a>
                     </div>
                     <div className='inline-block items-center sm:hidden'>
 
