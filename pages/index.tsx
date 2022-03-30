@@ -199,7 +199,7 @@ const Home: NextPage = () => {
               <div className='flex flex-col gap-4'>
                 <div className='h-[26rem] w-full relative shadow-lg shadow-amber-800/50 hover:shadow-amber-800 rounded-md'>
                   <Image
-                    src="/images/25d9f914-e4e4-4456-9972-caf87407d6aa.jpg"
+                    src="/images/25d9f914-e4e4-4456-9972-caf87407d6aa.JPG"
                     alt="Picture of the author"
                     layout='fill'
                     objectFit="cover" // change to suit your needs
