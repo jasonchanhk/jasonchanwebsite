@@ -65,14 +65,25 @@ const skillItems: Array<skillItemsProps> = [
 
 const experienceItems: Array<experienceItemsProps> = [
   {
+    from: 'Nov, 2022',
+    to: 'Present',
+    title: 'Associate Developer',
+    place: 'Yoox Net-A-Porter Group, London',
+    skills: [
+      "Revised our customised bulk reserve and promotion offers features on Salesforce, allowing our agent to personalise deals and discounts for VIPs",
+      "Introduced performance monitoring metrics into casework, provided tracking statistics on reference articles usage and case closing efficiency",
+      "Handled general user inquiries, analyzed and discovered new bugs. Documented all findings to enrich team knowledge"
+    ]
+  },
+  {
     from: 'Nov, 2021',
-    to: 'present',
+    to: 'Apr, 2022',
     title: 'Frontend Developer (Internship)',
     place: 'Blokbot, London',
     skills: [
-      'Building trendy interfaces and interactive charts for users dashboard',
-      'Using Typescript and Next to generate static-site for company website',
-      'Exploring possible application of multiple user management services including JWT, Auth0 and AWS Cognito'
+      'Pair-programmed a new user dashboard visualizing live crypto market data, trading bot performance, and customer portfolio', 
+      'Researched on user management services migration, created report analyzing JWT, Auth0 and AWS Cognito',
+      'Updated company’s React-Next-Typescript homepage interface regularly, discussed implementation with web designer'
     ]
   },
   {
@@ -87,8 +98,9 @@ const experienceItems: Array<experienceItemsProps> = [
     title: 'District Councilor ',
     place: 'Eastern District Council, Hong Kong',
     skills: [
-      'Overseeing communal facilities improvement and event budgeting',
-      'Advising owners committee on management crisis and mediating neighborhood dispute to facilitate community harmony'
+      "Founded the pandemic support program and facilitated cross-government collaboration. Vetting for the working group to ensure fair use of emergency reserve.",
+      "Actively consulted community stakeholders' opinions in social events such as parent-teacher day, cyclist events, and knitting workshops. Ensuring quality first-hand advice from all walks of life.",
+      "Advised on council’s public facilities improvement projects, revamping youth center, sport ground, and roads"
     ]
   },
   {
@@ -140,7 +152,7 @@ const Home: NextPage = () => {
               <h1 className={`font-light text-5xl md:text-7xl tracking-wider cursor-default hover:italic ${styles.titletext}`}>Jason Chan.</h1>
               <h1 className={`font-light text-5xl md:text-7xl tracking-wider  ${styles.titletext} pt-2 leading-none`}>
                 <span className={`text-white ${styles.stroketext}`}>I am a </span>
-                <span className='hover:italic cursor-default'>self-taught</span>
+                <span className='hover:italic cursor-default'>full-stack</span>
               </h1>
               <h1 className={`font-light text-5xl md:text-7xl tracking-wider cursor-default hover:italic ${styles.titletext} pt-2 leading-none`}>developer.</h1>
               <div className='text-base font-light pt-10 pb-4 md:py-10 md:w-3/4'>
