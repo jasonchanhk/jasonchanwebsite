@@ -2,7 +2,7 @@ import { IconContext } from "react-icons";
 import { IoChevronForward } from 'react-icons/io5'
 
 interface RedirectButtonProps {
-    className: string
+    className?: string
 }
 
 const RedirectButton = ({ className }: RedirectButtonProps) => {
