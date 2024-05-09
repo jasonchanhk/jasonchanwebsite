@@ -43,10 +43,10 @@ const Layout = ({ children, title }: Props) => {
 
             {/* navbar with responsiveness */}
             <header className={` bg-white sticky top-0 z-30 ease-in-out duration-300  ${navClassList ? "translate-y-0" : "-translate-y-full"}`}>
-                <div className={` h-24 px-6 md:px-12 text-amber-800 flex justify-between items-center ${styles.titletext}`}>
+                <div className={` h-24 px-6 md:px-12 text-black flex justify-between items-center ${styles.titletext}`}>
 
                     <div className={`flex items-center cursor-pointer font-extrabold text-3xl ${styles.titletext}`}>
-                        <Scrolllink to={'home'} spy={true} smooth={true} className='hover:text-amber-800/60 active:text-amber-900'>
+                        <Scrolllink to={'home'} spy={true} smooth={true} className=' hover:text-gray-500 active:text-gray-200'>
                             <span onClick={() => console.log(showSidebar)}>J</span>
                         </Scrolllink>
                     </div>
@@ -55,8 +55,7 @@ const Layout = ({ children, title }: Props) => {
                             menuItems.map((item, index) => {
                                 return (
                                     <button key={index}>
-                                        <Scrolllink to={item} spy={true} smooth={true} className='hover:text-amber-800/60 active:text-amber-900'>
-                                            <span className='font-semibold text-lg pr-1 '>0{index + 1}.</span>
+                                        <Scrolllink to={item} spy={true} smooth={true} className=' hover:text-lime-400/80 active:text-lime-400/60'>
                                             <span className='font-medium'>{item.charAt(0).toUpperCase() + item.slice(1)}</span>
                                         </Scrolllink>
                                     </button>
@@ -64,7 +63,7 @@ const Layout = ({ children, title }: Props) => {
                             })
                         }
                         <a href='Jason Chan Resume.pdf'>
-                            <button className='px-4 py-2 border rounded-md border-amber-800 font-medium hover:text-amber-800/60 hover:border-amber-800/60 active:text-amber-900 active:border-amber-900'>
+                            <button className='px-4 py-2 border rounded-md border-lime-400 font-medium hover:text-lime-400/80 hover:border-lime-400/80 active:bg-lime-400 active:text-white'>
                                 Resume
                             </button>
                         </a>
@@ -73,7 +72,7 @@ const Layout = ({ children, title }: Props) => {
 
                         <IconContext.Provider value={{ size: "2em", className: "cursor-pointer" }}>
                             <button onClick={() => { setShowSidebar(!showSidebar) }}>
-                                <FiMenu />
+                                <FiMenu />hi
                             </button>
                         </IconContext.Provider>
                     </div>
@@ -110,54 +109,6 @@ const Layout = ({ children, title }: Props) => {
             <div className={`${showSidebar ? 'blur-sm overflow-hidden pointer-events-none' : 'blur-none'}`}>
                 {children}
             </div>
-
-            {/* bottom right links */}
-            {/* <div className='bottom-0 md:left-3 lg:left-7 fixed hidden md:block '>
-                <div className='flex flex-col px-4 justify-center items-center space-y-4'>
-                    <IconContext.Provider value={{ color: "rgb(146 64 14)",size: "1.25em", className: "cursor-pointer" }}>
-                        <Link href="">
-                            <div>
-                                <FiGithub />
-                            </div>
-
-                        </Link>
-
-                        <Link href="">
-                            <div>
-                                <FiLinkedin />
-                            </div>
-
-                        </Link>
-                        <Link href="">
-                            <div>
-                                <FiInstagram />
-                            </div>
-                        </Link>
-                        <Link href="">
-                            <div>
-                                <FiTwitter />
-                            </div>
-                        </Link>
-                    </IconContext.Provider>
-
-                    <span className='mt-4 w-px h-20 bg-amber-800 block'></span>
-                </div>
-            </div> */}
-
-            {/* bottom right email */}
-            {/* <div className='bottom-0 md:right-16 lg:right-20 fixed hidden md:block'>
-                <div className='origin-bottom-right rotate-90 py-4 flex items-center'>
-
-
-                    <span className='text-sm font-medium tracking-wider cursor-pointer hover:text-lime-600 active:text-lime-300 flex items-center' onClick={() => { navigator.clipboard.writeText('chanjky97@gmail.com') }}>
-                        <IconContext.Provider value={{ size: "1em", className: "cursor-pointer -rotate-90 mr-2" }}>
-                            <FiCopy />
-                            chanjky97@gmail.com
-                        </IconContext.Provider>
-                    </span>
-                    <span className='ml-4 h-px w-20 bg-black inline-block'></span>
-                </div>
-            </div> */}
         </div >
 
     )

@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&family=Young+Serif&display=swap');
+
 .titletext{
-    font-family: 'Playfair Display', serif;
+    font-family: 'Syne', sans-serif;
 }
+
+.contenttext {
+    font-family: "Young Serif", serif;
+}
+  
