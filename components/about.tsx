@@ -45,21 +45,23 @@ export const About = () => {
             <div className='flex-1 text-white text-lg p-2'>
                 <div className={` ${styles.titletext} relative h-52 w-full whitespace-nowrap overflow-x-hidden`}>
                     <div className='absolute inset-0 font-extrabold text-8xl w-full z-0 text-lime-300/60'>
-                        About <br/> me
+                        About <br /> me
                     </div>
                     <div className='absolute z-40 inset-0 text-white'>
                         <div className='flex-col'>
                             <div className='font-semibold text-2xl underline tracking-wider underline-offset-8 z-40'>01. </div>
                             <div className='font-bold text-4xl md:text-6xl mt-2 tracking-wide z-40'>
                                 Who&nbsp;is&nbsp;
-                                <span className='text-indigo-600'>Jason<br/>Chan?</span>
+                                <span className='text-indigo-600'>Jason<br />Chan?</span>
                             </div>
                         </div>
 
                     </div>
                 </div>
                 <div>Year ago I moved to London looking for a new start. I challenged myself to code because I needed a breakthrough in life.</div>
-                <RedirectButton />
+                <RedirectButton>
+                    <a href='Jason Chan Resume.pdf'>Download Resume</a>
+                </RedirectButton>
             </div>
             {/* <div className='flex flex-col text-base font-light py-4 md:py-0 gap-4 text-amber-50 md:self-end md:pr-10 bg-white'>
                 <div>Year ago I moved to London looking for a new start. I challenged myself to code because I needed a breakthrough in life.</div>

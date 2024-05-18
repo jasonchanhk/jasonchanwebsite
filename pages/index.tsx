@@ -5,17 +5,18 @@ import Section from '../components/section'
 import Layout from '../components/layout'
 import Link from 'next/link'
 import { FiTwitter, FiGithub, FiLinkedin, FiInstagram, FiCopy } from 'react-icons/fi'
-import { IoChevronForward } from 'react-icons/io5'
 import { FaFacebookF } from 'react-icons/fa'
 import { IoChevronBack } from "react-icons/io5";
 import { MdEmail } from 'react-icons/md'
 import { IconContext } from "react-icons";
-import { projectItems } from '../components/project'
+// import { projectItems } from '../components/projectContent'
 import { About } from '../components/about'
 import { Experience } from '../components/experience'
 import RedirectButton from '../components/redirectButton'
 import Marquee from "react-fast-marquee";
 import { skillItems } from '../components/skill'
+import ProjectHeader from '../components/projectHeader'
+import ProjectContent from '../components/projectContent'
 
 const Home: NextPage = () => {
 
@@ -164,66 +165,8 @@ const Home: NextPage = () => {
         </div>
 
         <div id='project' className='bg-lime-400 text-white'>
-          <div className={`md:top-24 ${styles.titletext} text-black relative h-36 w-full whitespace-nowrap overflow-x-hidden`}>
-            <div className='absolute inset-0 font-extrabold text-8xl w-full z-0 text-lime-300 opacity-50'>
-              Latest Pojects
-            </div>
-            <div className='absolute z-40 inset-0 flex justify-between mx-auto max-w-7xl px-16 md:px-20 text-white'>
-              <div className='flex-col'>
-                <div className='font-semibold text-2xl underline tracking-wider underline-offset-8 z-40'>03. </div>
-                <div className='font-bold text-4xl md:text-6xl mt-2 tracking-wide z-40'>
-                  My&nbsp;
-                  <span className='text-indigo-600'>Latest Projects&nbsp;</span>
-                </div>
-              </div>
-              <RedirectButton className='mt-10'>
-                <a href='Jason Chan Resume.pdf'>View All Projects</a>
-              </RedirectButton>
-            </div>
-
-          </div>
-
-          <div className={`py-24 mx-auto max-w-7xl px-16 md:px-20`}>
-            <div className='flex flex-col md:flex-row  md:items-stretch md:min-h-[40rem] gap-x-4'>
-              {
-                projectItems.map(({ name, description, position, link, image }, index) => {
-
-                  return (
-                    <div className={`py-4 md:py-0 flex-1 text-amber-50 ${position}`} key={index} >
-                      <div className='h-px w-full bg-amber-50'></div>
-                      <div className='flex'>
-                        <div className='basis-5/6'>
-                          <div className={`font-semibold text-3xl py-4 tracking-wider ${styles.titletext}`}>{name}</div>
-                          <div className='font-light text-sm pt-1 pb-4'>{description}</div>
-                        </div>
-                        <div className='flex justify-center py-5 basis-1/6'>
-                          <Link passHref href={`${link}`}>
-                            <div className='border border-amber-50 hover:bg-amber-800/10 active:bg-amber-800/20  w-10 h-10 rounded-full flex items-center justify-center cursor-pointer'>
-                              <IconContext.Provider value={{ color: "rgb(255 251 235)", size: "1em", className: 'hover: text-amber-800' }}>
-                                <IoChevronForward />
-                              </IconContext.Provider>
-                            </div>
-                          </Link>
-                        </div>
-                      </div>
-                      {image ?
-                        <div className='relative w-full h-72 rounded-md shadow-lg shadow-amber-800/50 cursor-pointer hover:shadow-amber-800/70 active:shadow-amber-800'>
-                          <Link passHref href={`${link}`}>
-                            <Image
-                              src={image}
-                              alt={name}
-                              layout='fill'
-                              objectFit="cover"
-                              className='rounded-md' />
-                          </Link>
-                        </div> :
-                        <div className='h-52 bg-slate-100'></div>}
-                    </div>
-                  )
-                })
-              }
-            </div>
-          </div>
+          <ProjectHeader />
+          <ProjectContent />
         </div>
 
         <Section id='contact' index={4}>
