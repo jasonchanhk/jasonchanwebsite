@@ -8,15 +8,13 @@ type Props = {
     children?: ReactNode
     id?: string
     colored?: boolean
-    index?: number
+    classname?: string
 }
 
-const Section = ({ children, id, colored, index }: Props) => {
+const Section = ({ children, id, colored, classname }: Props) => {
     return (
-        <div className={`${colored && 'bg-lime-400'}`}>
-            <div id={id} className={`relative min-h-screen py-24 mx-auto max-w-7xl px-16 md:px-20`}>
-                {children}
-            </div>
+        <div id={id} className={`${colored && 'bg-lime-400 text-white'} ${classname}`}>
+            {children}
         </div>)
 }
 

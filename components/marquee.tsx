@@ -11,7 +11,7 @@ const TechMarquee = () => {
     >
         {skillItems.map(({ name, icon }) => {
             return (
-                <div className='flex px-4 md:px-8'>
+                <div className='flex px-4 md:px-10'>
                     <span className='pr-4'>{icon}</span>
                     <span>{name}</span>
                 </div>

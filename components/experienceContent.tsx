@@ -6,7 +6,7 @@ import { AiOutlineCaretDown } from 'react-icons/ai'
 import { IoSchool } from "react-icons/io5";
 import { MdOutlineWork } from "react-icons/md";
 
-export interface experienceItemsProps {
+interface experienceItemsProps {
     fromYear: string;
     fromMonth: string;
     toYear: string;
@@ -16,11 +16,11 @@ export interface experienceItemsProps {
     skills?: Array<string>
 }
 
-export interface itemsListProps {
+interface itemsListProps {
     items: Array<experienceItemsProps>
 }
 
-export const workExpItems: Array<experienceItemsProps> = [
+const workExpItems: Array<experienceItemsProps> = [
     {
         fromYear: '2022',
         fromMonth: 'Nov',
@@ -62,7 +62,7 @@ export const workExpItems: Array<experienceItemsProps> = [
     }
 ]
 
-export const educationExpItems: Array<experienceItemsProps> = [
+const educationExpItems: Array<experienceItemsProps> = [
     {
         fromYear: '2021',
         fromMonth: 'Jun',
@@ -89,7 +89,7 @@ export const educationExpItems: Array<experienceItemsProps> = [
     },
 ]
 
-export const ItemsList = ({ items }: itemsListProps) => {
+const ItemsList = ({ items }: itemsListProps) => {
     return (
         <div>
             {items.map(({ fromYear, fromMonth, toYear, toMonth, title, place, skills }, index) => {
@@ -125,7 +125,7 @@ export const ItemsList = ({ items }: itemsListProps) => {
     )
 }
 
-export const ExperienceContent = () => {
+const ExperienceContent = () => {
 
     const [open, setOpen] = useState<string>()
 
@@ -185,3 +185,5 @@ export const ExperienceContent = () => {
         </div>
     )
 }
+
+export default ExperienceContent
