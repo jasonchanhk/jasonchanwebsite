@@ -121,13 +121,13 @@ const Home: NextPage = () => {
 
 
         <Marquee
-          className={`h-20 bg-indigo-600 text-white font-bold text-6xl md:text-4xl ${styles.titletext}`}
+          className={`bg-indigo-600 text-white font-bold text-2xl md:text-4xl ${styles.titletext} tracking-wide py-4`}
           autoFill={true}
           speed={20}
         >
           {skillItems.map(({ name, icon }) => {
             return (
-              <div className='flex px-8'>
+              <div className='flex px-4 md:px-8'>
                 <span className='pr-4'>{icon}</span>
                 <span>{name}</span>
               </div>
@@ -176,7 +176,9 @@ const Home: NextPage = () => {
                   <span className='text-indigo-600'>Latest Projects&nbsp;</span>
                 </div>
               </div>
-              <RedirectButton className='mt-10' />
+              <RedirectButton className='mt-10'>
+                <a href='Jason Chan Resume.pdf'>View All Projects</a>
+              </RedirectButton>
             </div>
 
           </div>

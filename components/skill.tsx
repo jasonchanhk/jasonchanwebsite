@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import { SiReact, SiTypescript, SiNextdotjs, SiTailwindcss, SiNodedotjs, SiMysql } from 'react-icons/si'
+import { SiReact, SiRedux, SiExpress, SiTypescript, SiNextdotjs, SiPython, SiFlask, SiMysql } from 'react-icons/si'
 
 export interface skillItemsProps {
     name: string;
@@ -8,24 +8,28 @@ export interface skillItemsProps {
 
 export const skillItems: Array<skillItemsProps> = [
     {
-        name: 'React',
-        icon: <SiReact />
-    },
-    {
         name: 'Typescript',
         icon: <SiTypescript />
     },
     {
-        name: 'Next.js',
+        name: 'React',
+        icon: <SiReact />
+    },
+    {
+        name: 'Redux',
+        icon: <SiRedux />
+    },
+    {
+        name: 'Next',
         icon: <SiNextdotjs />
     },
     {
-        name: 'Node.js',
-        icon: <SiNodedotjs />
+        name: 'Python',
+        icon: <SiPython />
     },
     {
-        name: 'Tailwind',
-        icon: <SiTailwindcss />
+        name: 'Flask',
+        icon: <SiFlask />
     },
     {
         name: 'MySQL',
