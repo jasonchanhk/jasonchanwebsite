@@ -24,7 +24,7 @@ export const skillItems: Array<skillItemsProps> = [
         icon: <SiNodedotjs />
     },
     {
-        name: 'Tailwind CSS',
+        name: 'Tailwind',
         icon: <SiTailwindcss />
     },
     {

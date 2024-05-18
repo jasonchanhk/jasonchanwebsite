@@ -7,73 +7,133 @@ import Link from 'next/link'
 import { FiTwitter, FiGithub, FiLinkedin, FiInstagram, FiCopy } from 'react-icons/fi'
 import { IoChevronForward } from 'react-icons/io5'
 import { FaFacebookF } from 'react-icons/fa'
+import { IoChevronBack } from "react-icons/io5";
 import { MdEmail } from 'react-icons/md'
 import { IconContext } from "react-icons";
 import { projectItems } from '../components/project'
 import { About } from '../components/about'
 import { Experience } from '../components/experience'
 import RedirectButton from '../components/redirectButton'
+import Marquee from "react-fast-marquee";
+import { skillItems } from '../components/skill'
 
 const Home: NextPage = () => {
 
+  const copyEvent = () => {
+    navigator.clipboard.writeText('chanjky97@gmail.com');
+    alert('Email copied to clipboard');
+  }
   return (
     <Layout title="Jason Chan">
 
       <div>
-        <Section id='home'>
-          <div className='flex flex-col md:flex-row'>
-            <div className='text-amber-800 basis-2/3'>
-              <h1 className={`font-thin text-xl ${styles.titletext}`}>Hi, my name is</h1>
-              <h1 className={`font-light text-5xl md:text-7xl tracking-wider cursor-default hover:italic ${styles.titletext}`}>Jason Chan.</h1>
-              <h1 className={`font-light text-5xl md:text-7xl tracking-wider  ${styles.titletext} pt-2 leading-none`}>
-                <span className={`text-white ${styles.stroketext}`}>I am a </span>
-                <span className='hover:italic cursor-default'>full-stack</span>
-              </h1>
-              <h1 className={`font-light text-5xl md:text-7xl tracking-wider cursor-default hover:italic ${styles.titletext} pt-2 leading-none`}>developer.</h1>
-              <div className='text-base font-light pt-10 pb-4 md:py-10 md:w-3/4'>
-                Graduated from sociology, self-taught programming in the previous year, now working as an intern at a crypto start-up. Gain the most satisfaction adopting new skills and facilitating group communication. Passionate about Full Stack Javascript development.</div>
-              <div className={`font-thin text-xl pb-4 flex items-center ${styles.titletext}`}>
-                <div className='flex gap-x-4'>
-                  <IconContext.Provider value={{ color: "white", size: "0.8em", className: "cursor-pointer" }}>
-                    <Link passHref href="https://github.com/jasonchanhk">
-                      <div className='w-8 h-8 rounded-full bg-amber-800 hover:bg-amber-800/80 active:bg-amber-900 flex justify-center items-center cursor-pointer'>
-                        <FiGithub />
-                      </div>
-                    </Link>
-
-                    <Link passHref href="https://www.linkedin.com/in/jason-chan-361266217/">
-                      <div className='w-8 h-8 rounded-full bg-amber-800 hover:bg-amber-800/80 active:bg-amber-900 flex justify-center items-center cursor-pointer'>
-                        <FiLinkedin />
-                      </div>
-
-                    </Link>
-
-                    <Link passHref href="https://www.instagram.com/chanjky97/">
-                      <div className='w-8 h-8 rounded-full bg-amber-800 hover:bg-amber-800/80 active:bg-amber-900 flex justify-center items-center cursor-pointer'>
-                        <FiInstagram />
-                      </div>
-                    </Link>
-
-                    <Link passHref href="https://twitter.com/JC_hkuk">
-                      <div className='w-8 h-8 rounded-full bg-amber-800 hover:bg-amber-800/80 active:bg-amber-900 flex justify-center items-center cursor-pointer'>
-                        <FiTwitter />
-                      </div>
-                    </Link>
-                  </IconContext.Provider></div>
+        {/* <Section id='home'>
+          <div className='flex flex-col'>
+            <div className='flex justify-center text-2xl'>
+              <div className='flex items-center pb-6'>
+                <div className='bg-lime-400 h-1 w-4 mr-3'></div>
+                <div className='inline-block'>Hello</div>
               </div>
             </div>
-            <div className='basis-1/3  drop-shadow-lg '>
-              <div className='relative w-72 h-96 md:w-96 md:h-[30rem] shadow-lg shadow-amber-800/50 hover:shadow-amber-800 rounded-md'>
-                <Image
-                  src="/images/IMG_0528.jpg"
-                  alt="Picture of the author"
-                  layout='fill'
-                  objectFit="cover" // change to suit your needs
-                  className="rounded-md" />
+            <div className={`font-bold text-6xl md:text-8xl ${styles.titletext}`}>
+              <div className='flex justify-center'>
+                I'm&nbsp;
+                <div className='inline-block text-lime-400'>
+                  Jason,
+                  <div className='bg-lime-400 h-2'></div>
+                </div>
+              </div>
+              <div className='flex justify-center'>Software Engineer</div>
+            </div>
+          </div>
+
+          <Image
+            src="/images/portrait-removebg-1.png"
+            alt="Picture of the author"
+            height={500}
+            width={500}
+            layout='fixed'
+            objectFit="cover" // change to suit your needs
+            className="rounded-md" />
+        </Section> */}
+
+        <div id='home' className='relative'>
+          <div className={`py-24 mx-auto max-w-7xl px-16 md:px-20`}>
+            <div className='flex flex-col'>
+              <div className='flex justify-center text-2xl'>
+                <div className='flex items-center pb-6'>
+                  <div className='bg-lime-400 h-1 w-4 mr-3'></div>
+                  <div className='inline-block'>Hello</div>
+                </div>
+              </div>
+              <div className={`font-bold text-6xl md:text-8xl ${styles.titletext}`}>
+                <div className='flex justify-center'>
+                  I'm&nbsp;
+                  <div className='inline-block text-lime-400'>
+                    Jason,
+                    <div className='bg-lime-400 h-2'></div>
+                  </div>
+                </div>
+                <div className='flex justify-center'>Software Engineer</div>
+              </div>
+              <div className='mt-24 h-80 z-40 flex items-end'>
+                {/* button */}
+                <div className='flex'>
+                  <IconContext.Provider value={{ color: "white", size: "1.2rem" }}>
+                    <a href="https://github.com/jasonchanhk" target="_blank">
+                      <div className='w-14 h-14 rounded-full bg-lime-400 border-2 border-white hover:bg-lime-500 active:bg-lime-600 flex justify-center items-center cursor-pointer'>
+                        <FiGithub />
+                      </div>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/jason-chan-361266217/" target="_blank">
+                      <div className='w-14 h-14 -ml-4 rounded-full bg-lime-400 border-2 border-white hover:bg-lime-500 active:bg-lime-600 flex justify-center items-center cursor-pointer'>
+                        <FiLinkedin />
+                      </div>
+                    </a>
+
+                    <div
+                      className='w-14 h-14 -ml-4 rounded-full bg-lime-400 border-2 border-white hover:bg-lime-500 active:bg-lime-600 flex justify-center items-center cursor-pointer'
+                      onClick={copyEvent}
+                    >
+                      <MdEmail />
+                    </div>
+
+                    <div className='w-14 h-14 -ml-4 rounded-full bg-gray-200 border-2 border-white flex justify-center items-center'>
+                      <IoChevronBack />
+                    </div>
+                  </IconContext.Provider>
+                </div>
               </div>
             </div>
           </div>
-        </Section>
+          <div className='absolute z-20 inset-0 mx-auto flex justify-center items-end'>
+            <Image
+              src="/images/portrait-removebg-4.png"
+              alt="Picture of the author"
+              height={600}
+              width={600}
+              layout='fixed'
+              objectFit="cover" />
+          </div>
+
+        </div>
+
+
+        <Marquee
+          className={`h-20 bg-indigo-600 text-white font-bold text-6xl md:text-4xl ${styles.titletext}`}
+          autoFill={true}
+          speed={20}
+        >
+          {skillItems.map(({ name, icon }) => {
+            return (
+              <div className='flex px-8'>
+                <span className='pr-4'>{icon}</span>
+                <span>{name}</span>
+              </div>
+            )
+          })}
+        </Marquee>
 
         <div id='about' className='bg-lime-400'>
           <div className={`py-24 mx-auto max-w-7xl px-16 md:px-20`}>
@@ -202,6 +262,20 @@ const Home: NextPage = () => {
                       <div className='pl-2 pr-4 font-light'>facebook.com/jason.chan.7</div>
                     </div>
                   </Link>
+
+                  <IconContext.Provider value={{ color: "white", size: "0.8em", className: "cursor-pointer" }}>
+                    <Link passHref href="https://github.com/jasonchanhk">
+                      <div className='w-8 h-8 rounded-full bg-amber-800 hover:bg-amber-800/80 active:bg-amber-900 flex justify-center items-center cursor-pointer'>
+                        <FiGithub />
+                      </div>
+                    </Link>
+
+                    <Link passHref href="https://www.linkedin.com/in/jason-chan-361266217/">
+                      <div className='w-8 h-8 rounded-full bg-amber-800 hover:bg-amber-800/80 active:bg-amber-900 flex justify-center items-center cursor-pointer'>
+                        <FiLinkedin />
+                      </div>
+                    </Link>
+                  </IconContext.Provider>
                 </div>
 
               </IconContext.Provider>
@@ -211,7 +285,7 @@ const Home: NextPage = () => {
         </Section>
 
       </div>
-    </Layout>
+    </Layout >
   )
 }
 

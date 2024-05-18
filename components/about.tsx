@@ -52,7 +52,7 @@ export const About = () => {
                             <div className='font-semibold text-2xl underline tracking-wider underline-offset-8 z-40'>01. </div>
                             <div className='font-bold text-4xl md:text-6xl mt-2 tracking-wide z-40'>
                                 Who&nbsp;is&nbsp;
-                                <span className='text-indigo-600'>Jason<br/>Chan?&nbsp;</span>
+                                <span className='text-indigo-600'>Jason<br/>Chan?</span>
                             </div>
                         </div>
 
