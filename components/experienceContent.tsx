@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { IconContext } from "react-icons";
-import { skillItems } from "./skill";
 import styles from '../styles/Home.module.css';
 
 import { AiOutlineCaretDown } from 'react-icons/ai'
@@ -126,30 +125,31 @@ export const ItemsList = ({ items }: itemsListProps) => {
     )
 }
 
-export const Experience = () => {
+export const ExperienceContent = () => {
 
     const [open, setOpen] = useState<string>()
 
     return (
-        <div className='flex flex-col md:flex-row md:items-stretch md:min-h-7xl gap-8 pt-10'>
-            <div className='flex-1 bg-gray-50 rounded-2xl p-10'>
-                <div className="flex items-center text-lime-400">
-                    <div className='bg-lime-400 rounded-full w-14 h-14 flex items-center justify-center'>
-                        <IconContext.Provider value={{ size: "1.125em" }}>
-                            <span className='text-white font-medium text-3xl z-20'>
-                                <IoSchool />
-                            </span>
-                        </IconContext.Provider>
+        <div className={`py-24 mx-auto max-w-7xl px-16 md:px-20`}>
+            <div className='flex flex-col md:flex-row md:items-stretch md:min-h-7xl gap-8 pt-10'>
+                <div className='flex-1 bg-gray-50 rounded-2xl p-10'>
+                    <div className="flex items-center text-lime-400">
+                        <div className='bg-lime-400 rounded-full w-14 h-14 flex items-center justify-center'>
+                            <IconContext.Provider value={{ size: "1.125em" }}>
+                                <span className='text-white font-medium text-3xl z-20'>
+                                    <IoSchool />
+                                </span>
+                            </IconContext.Provider>
+                        </div>
+                        <div className={`font-bold text-3xl py-4 pl-4 tracking-wide ${styles.titletext}`}>
+                            Education
+                        </div>
                     </div>
-                    <div className={`font-bold text-3xl py-4 pl-4 tracking-wide ${styles.titletext}`}>
-                        Education
-                    </div>
-                </div>
 
-                <div className='h-px w-full bg-gray-200 mt-4 mb-6'></div>
+                    <div className='h-px w-full bg-gray-200 mt-4 mb-6'></div>
 
-                < ItemsList items={educationExpItems} />
-                {/* <IconContext.Provider value={{ size: "1.125em" }}>
+                    < ItemsList items={educationExpItems} />
+                    {/* <IconContext.Provider value={{ size: "1.125em" }}>
                 <div className='grid grid-cols-2 md:grid-cols-4 gap-4'>
                   {skillItems.map(({ name, icon }, index) => {
                     return (
@@ -162,24 +162,25 @@ export const Experience = () => {
                   })}
                 </div>
               </IconContext.Provider> */}
-            </div>
-            <div className='flex-1 bg-gray-50 rounded-2xl p-8'>
-                <div className="flex items-center text-lime-400">
-                    <div className='bg-lime-400 rounded-full w-14 h-14 flex items-center justify-center'>
-                        <IconContext.Provider value={{ size: "1.125em" }}>
-                            <span className='text-white font-medium text-3xl z-20'>
-                                <MdOutlineWork />
-                            </span>
-                        </IconContext.Provider>
-                    </div>
-                    <div className={`font-bold text-3xl py-4 pl-4 tracking-wide ${styles.titletext}`}>
-                        Work Experience
-                    </div>
                 </div>
+                <div className='flex-1 bg-gray-50 rounded-2xl p-8'>
+                    <div className="flex items-center text-lime-400">
+                        <div className='bg-lime-400 rounded-full w-14 h-14 flex items-center justify-center'>
+                            <IconContext.Provider value={{ size: "1.125em" }}>
+                                <span className='text-white font-medium text-3xl z-20'>
+                                    <MdOutlineWork />
+                                </span>
+                            </IconContext.Provider>
+                        </div>
+                        <div className={`font-bold text-3xl py-4 pl-4 tracking-wide ${styles.titletext}`}>
+                            Work Experience
+                        </div>
+                    </div>
 
-                <div className='h-px w-full bg-gray-200 mt-4 mb-6'></div>
+                    <div className='h-px w-full bg-gray-200 mt-4 mb-6'></div>
 
-                < ItemsList items={workExpItems} />
+                    < ItemsList items={workExpItems} />
+                </div>
             </div>
         </div>
     )

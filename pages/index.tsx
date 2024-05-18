@@ -11,12 +11,13 @@ import { MdEmail } from 'react-icons/md'
 import { IconContext } from "react-icons";
 // import { projectItems } from '../components/projectContent'
 import { About } from '../components/about'
-import { Experience } from '../components/experience'
+import { ExperienceContent } from '../components/experienceContent'
 import RedirectButton from '../components/redirectButton'
 import Marquee from "react-fast-marquee";
 import { skillItems } from '../components/skill'
 import ProjectHeader from '../components/projectHeader'
 import ProjectContent from '../components/projectContent'
+import ExperienceHeader from '../components/experienceHeader'
 
 const Home: NextPage = () => {
 
@@ -143,25 +144,8 @@ const Home: NextPage = () => {
         </div>
 
         <div id='experience'>
-          <div className={`md:top-24 ${styles.titletext} text-black relative h-28 w-full whitespace-nowrap overflow-x-hidden`}>
-            <div className='absolute inset-0 font-extrabold text-8xl w-full text-gray-100 z-0'>
-              ducation & Work Experience My education
-            </div>
-            <div className='absolute z-40 inset-0 mx-auto flex justify-center'>
-              <div className='flex-col'>
-                <div className='font-semibold text-2xl underline tracking-wider underline-offset-8 z-40'>02. </div>
-                <div className='font-bold text-3xl md:text-5xl mt-2 tracking-wide z-40'>
-                  My&nbsp;
-                  <span className='text-lime-400'>Education&nbsp;</span>
-                  &&nbsp;
-                  <span className='text-lime-400'>Work Experience </span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={`py-24 mx-auto max-w-7xl px-16 md:px-20`}>
-            <Experience />
-          </div>
+          <ExperienceHeader />
+          <ExperienceContent />
         </div>
 
         <div id='project' className='bg-lime-400 text-white'>
