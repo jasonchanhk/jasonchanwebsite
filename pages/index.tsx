@@ -13,11 +13,10 @@ import { IconContext } from "react-icons";
 import { About } from '../components/about'
 import { ExperienceContent } from '../components/experienceContent'
 import RedirectButton from '../components/redirectButton'
-import Marquee from "react-fast-marquee";
-import { skillItems } from '../components/skill'
 import ProjectHeader from '../components/projectHeader'
 import ProjectContent from '../components/projectContent'
 import ExperienceHeader from '../components/experienceHeader'
+import TechMarquee from '../components/marquee'
 
 const Home: NextPage = () => {
 
@@ -122,20 +121,7 @@ const Home: NextPage = () => {
         </div>
 
 
-        <Marquee
-          className={`bg-indigo-600 text-white font-bold text-2xl md:text-4xl ${styles.titletext} tracking-wide py-4`}
-          autoFill={true}
-          speed={20}
-        >
-          {skillItems.map(({ name, icon }) => {
-            return (
-              <div className='flex px-4 md:px-8'>
-                <span className='pr-4'>{icon}</span>
-                <span>{name}</span>
-              </div>
-            )
-          })}
-        </Marquee>
+        <TechMarquee />
 
         <div id='about' className='bg-lime-400'>
           <div className={`py-24 mx-auto max-w-7xl px-16 md:px-20`}>
