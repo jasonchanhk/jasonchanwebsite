@@ -16,7 +16,7 @@ const ProjectHeader = () => {
                 </div>
               </div>
               <RedirectButton className='mt-10'>
-                <a href="https://github.com/jasonchanhk" target="_blank">View All Projects</a>
+                <a href="https://github.com/jasonchanhk" target="_blank" rel="noreferrer">View All Projects</a>
               </RedirectButton>
             </div>
           </div>
