@@ -46,8 +46,8 @@ const Layout = ({ children, title }: Props) => {
                 <div className={` h-24 px-6 md:px-12 text-black flex justify-between items-center ${styles.titletext}`}>
 
                     <div className={`flex items-center cursor-pointer font-extrabold text-3xl ${styles.titletext}`}>
-                        <Scrolllink to={'home'} spy={true} smooth={true} className=' hover:text-gray-500 active:text-gray-200'>
-                            <span onClick={() => console.log(showSidebar)}>J</span>
+                        <Scrolllink to={'home'} spy={true} smooth={true} className=' text-black hover:text-lime-400 hover:underline underline-offset-4'>
+                            <span>J</span>
                         </Scrolllink>
                     </div>
                     <div className='sm:flex flex-row items-center space-x-5 hidden'>
@@ -55,15 +55,15 @@ const Layout = ({ children, title }: Props) => {
                             menuItems.map((item, index) => {
                                 return (
                                     <button key={index}>
-                                        <Scrolllink to={item} spy={true} smooth={true} className=' hover:text-lime-400/80 active:text-lime-400/60'>
-                                            <span className='font-medium'>{item.charAt(0).toUpperCase() + item.slice(1)}</span>
+                                        <Scrolllink to={item} spy={true} smooth={true} className=' hover:text-lime-400 hover:underline underline-offset-4 '>
+                                            <span className='font-medium capitalize'>{item}</span>
                                         </Scrolllink>
                                     </button>
                                 )
                             })
                         }
                         <a href='Jason Chan Resume.pdf'>
-                            <button className='px-4 py-2 border rounded-md border-lime-400 font-medium hover:text-lime-400/80 hover:border-lime-400/80 active:bg-lime-400 active:text-white'>
+                            <button className='px-8 py-2 border border-lime-400 rounded-full text-white bg-lime-400 font-medium hover:bg-white hover:border-black hover:text-black hover:underline underline-offset-4'>
                                 Resume
                             </button>
                         </a>
@@ -72,7 +72,7 @@ const Layout = ({ children, title }: Props) => {
 
                         <IconContext.Provider value={{ size: "2em", className: "cursor-pointer" }}>
                             <button onClick={() => { setShowSidebar(!showSidebar) }}>
-                                <FiMenu />hi
+                                <FiMenu />
                             </button>
                         </IconContext.Provider>
                     </div>
@@ -80,28 +80,27 @@ const Layout = ({ children, title }: Props) => {
             </header>
 
             {/* siderbar */}
-            <div className={`top-0 right-0 w-80 bg-amber-50 p-10 text-amber-800 hover:text-amber-800/60 fixed h-full z-40 flex flex-col  font-medium ease-in-out duration-300 ${styles.titletext} ${showSidebar ? "translate-x-0" : "translate-x-full"}`}>
+            <div className={`top-0 right-0 w-80 bg-white p-10 text-black fixed h-full z-40 flex flex-col ease-in-out duration-300 ${styles.titletext} ${showSidebar ? "translate-x-0" : "translate-x-full"}`}>
 
                 <IconContext.Provider value={{ size: "2.25em" }}>
                     <button className="cursor-pointer top-10 right-10 absolute" onClick={() => setShowSidebar(!showSidebar)}>
                         <FiX />
                     </button>
                 </IconContext.Provider>
-                <div className='flex flex-col gap-y-12 h-full justify-center items-center tracking-widest'>
+                <div className='flex flex-col gap-y-12 h-full justify-center items-center'>
                     {
                         menuItems.map((item, index) => {
                             return (
-                                <button className=' tracking-widest' key={index}>
+                                <button className='active:text-lime-400 active:underline underline-offset-4 ' key={index}>
                                     <Scrolllink to={item} spy={true} smooth={true} onClick={() => setShowSidebar(!showSidebar)}>
-                                        <span className='font-semibold text-lg'>0{index + 1}. </span><br />
-                                        <span className='font-medium'>{item.charAt(0).toUpperCase() + item.slice(1)}</span>
+                                        <span className='font-medium capitalize'>{item}</span>
                                     </Scrolllink>
                                 </button>
                             )
                         })
                     }
 
-                    <button className='px-12 py-3 border rounded-md border-amber-800 hover:border-amber-800/60'>Resume</button>
+                    <button className={`px-8 py-2 border ${styles.titletext} font-mediumborder-lime-400 rounded-full text-white bg-lime-400 font-medium active:bg-white active:border-black active:text-black active:underline underline-offset-4`}>Resume</button>
                 </div>
             </div>
 
