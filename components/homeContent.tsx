@@ -23,10 +23,9 @@ const HomeContent = () => {
                         <div className='inline-block'>Hello</div>
                     </div>
                 </div>
-                <div className={`font-bold text-6xl md:text-8xl ${styles.titletext}`}>
+                <div className={`font-bold text-6xl md:text-8xl ${styles.titletext} flex flex-col`}>
                     <div className='flex justify-center'>
-                        <div>I'm </div>
-                        &nbsp;
+                        <div>I&apos;m&nbsp;</div>
                         <div className='inline-block text-lime-400'>
                             Jason,
                             <div className='bg-lime-400 h-2'></div>
