@@ -4,7 +4,40 @@ import styles from '../styles/Home.module.css'
 import Image from 'next/image'
 import RedirectButton from "./redirectButton";
 
-export const About = () => {
+const SelfIntroduction = () => {
+    return (
+        <div>
+            Year ago I moved to London looking for a new start. I challenged myself to code because I needed a breakthrough in life.
+            <br /><br />
+            It was tough at first to study without any teaching guidance. Yet I soon managed to utilize free online resources constructing my own curriculum and learning system, which brought me tremendous joy and satisfaction.
+            <br /><br />
+            I was greatly encouraged by the fact that programming is for everyone and equal to everyone who is hard-working.
+        </div>
+    )
+}
+
+const AboutTitle = () => {
+    return (
+        <div className={` ${styles.titletext} relative h-52 w-full whitespace-nowrap overflow-x-hidden`}>
+            <div className='absolute inset-0 font-extrabold text-8xl w-full z-0 text-lime-300/60'>
+                About <br /> me
+            </div>
+            <div className='absolute z-40 inset-0 text-white'>
+                <div className='flex-col'>
+                    <div className='font-semibold text-2xl underline tracking-wider underline-offset-8 z-40'>01. </div>
+                    <div className='font-bold text-4xl md:text-6xl mt-2 tracking-wide z-40'>
+                        Who&nbsp;is&nbsp;
+                        <span className='text-indigo-600'>Jason<br />Chan?</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    )
+}
+
+const About = () => {
+
     return (
         <div className={`py-24 mx-auto max-w-7xl px-16 md:px-20`}>
             <div className='flex flex-col md:flex-row md:items-stretch md:h-[40em] gap-8'>
@@ -44,22 +77,8 @@ export const About = () => {
                     </div>
                 </div>
                 <div className='flex-1 text-white text-lg p-2'>
-                    <div className={` ${styles.titletext} relative h-52 w-full whitespace-nowrap overflow-x-hidden`}>
-                        <div className='absolute inset-0 font-extrabold text-8xl w-full z-0 text-lime-300/60'>
-                            About <br /> me
-                        </div>
-                        <div className='absolute z-40 inset-0 text-white'>
-                            <div className='flex-col'>
-                                <div className='font-semibold text-2xl underline tracking-wider underline-offset-8 z-40'>01. </div>
-                                <div className='font-bold text-4xl md:text-6xl mt-2 tracking-wide z-40'>
-                                    Who&nbsp;is&nbsp;
-                                    <span className='text-indigo-600'>Jason<br />Chan?</span>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div>Year ago I moved to London looking for a new start. I challenged myself to code because I needed a breakthrough in life.</div>
+                    <AboutTitle />
+                    <SelfIntroduction />
                     <RedirectButton>
                         <a href='Jason Chan Resume.pdf'>Download Resume</a>
                     </RedirectButton>
@@ -111,4 +130,6 @@ export const About = () => {
         </div>
     )
 }
+
+export default About;
 
