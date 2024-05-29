@@ -16,7 +16,7 @@ import TechMarquee from '../components/marquee'
 import HomePortrait from '../components/homePortrait'
 import HomeContent from '../components/homeContent'
 
-import Contact from '../components/Contact'
+import Contact from '../components/contact'
 
 const Home: NextPage = () => {
 
