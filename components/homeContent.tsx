@@ -1,19 +1,11 @@
-import Image from 'next/image'
-import Link from 'next/link'
 import styles from '../styles/Home.module.css'
-
 import { FiGithub, FiLinkedin } from 'react-icons/fi'
 import { IoChevronBack } from "react-icons/io5";
 import { MdEmail } from 'react-icons/md'
 import { IconContext } from "react-icons";
+import { copyEvent } from '../utils/copyEvent';
 
 const HomeContent = () => {
-
-    const copyEvent = () => {
-        navigator.clipboard.writeText('chanjky97@gmail.com');
-        alert('Email copied to clipboard');
-    }
-
     return (
         <div className={`py-24 mx-auto max-w-7xl px-16 md:px-20`}>
             <div className='flex flex-col'>

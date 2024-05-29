@@ -1,7 +1,44 @@
+import { ReactNode } from 'react'
 import Marquee from "react-fast-marquee";
-import { skillItems } from '../components/skill'
 
 import styles from '../styles/Home.module.css'
+import { SiReact, SiRedux, SiTypescript, SiNextdotjs, SiPython, SiFlask, SiMysql } from 'react-icons/si'
+
+interface skillItemsProps {
+    name: string;
+    icon: ReactNode;
+}
+
+const skillItems: Array<skillItemsProps> = [
+    {
+        name: 'Typescript',
+        icon: <SiTypescript />
+    },
+    {
+        name: 'React',
+        icon: <SiReact />
+    },
+    {
+        name: 'Redux',
+        icon: <SiRedux />
+    },
+    {
+        name: 'Next',
+        icon: <SiNextdotjs />
+    },
+    {
+        name: 'Python',
+        icon: <SiPython />
+    },
+    {
+        name: 'Flask',
+        icon: <SiFlask />
+    },
+    {
+        name: 'MySQL',
+        icon: <SiMysql />
+    }
+]
 
 const TechMarquee = () => {
     return (<Marquee
