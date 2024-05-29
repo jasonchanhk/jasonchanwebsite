@@ -3,7 +3,7 @@ import styles from '../styles/Home.module.css';
 const ExperienceHeader = () => {
     return(
         <div className={`md:top-24 ${styles.titletext} text-black relative h-28 w-full whitespace-nowrap overflow-x-hidden`}>
-        <div className='absolute inset-0 font-extrabold text-8xl w-full text-gray-100 z-0'>
+        <div className='absolute inset-0 font-extrabold text-8xl w-full text-gray-50 z-0'>
           ducation & Work Experience My education
         </div>
         <div className='absolute z-40 inset-0 mx-auto flex justify-center'>
