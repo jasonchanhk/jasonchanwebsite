@@ -1,12 +1,15 @@
 import { useState } from "react";
-import { IconContext } from "react-icons";
 import styles from '../styles/Home.module.css';
 
-import { AiOutlineCaretDown } from 'react-icons/ai'
+import { IconContext } from "react-icons";
 import { IoSchool } from "react-icons/io5";
 import { MdOutlineWork } from "react-icons/md";
 
-interface experienceItemsProps {
+import ExperienceModal from "./experienceModal";
+import Modal from "./test";
+
+
+export interface experienceItemsProps {
     fromYear: string;
     fromMonth: string;
     toYear: string;
@@ -92,33 +95,22 @@ const educationExpItems: Array<experienceItemsProps> = [
 const ItemsList = ({ items }: itemsListProps) => {
     return (
         <div>
-            {items.map(({ fromYear, fromMonth, toYear, toMonth, title, place, skills }, index) => {
+            {items.map((item, index) => {
                 return (
-                    <div key={index} className='text-black'>
+                    <ExperienceModal key={index} className={`text-black ${item.skills ? 'cursor-pointer':''}`} item={item}>
                         <div className='flex mb-8 justify-between'>
                             <div className='flex-col'>
                                 <div className=' justify-between items-center'>
-                                    <h2 className="text-2xl font-medium pb-2">{title}</h2>
-                                    <h3 className='text-lg font-light text-gray-800'>{place}</h3>
-                                    {/* 
-                                        <IconContext.Provider value={{ size: "0.8em", className: "cursor-pointer md:inline-block hidden" }}>
-                                            {skills && <div onClick={() => setOpen(title)}><AiOutlineCaretDown /></div>}
-                                        </IconContext.Provider> */}
+                                    <h2 className="text-2xl font-medium pb-2">{item.title}</h2>
+                                    <h3 className='text-lg font-light text-gray-800'>{item.place}</h3>
                                 </div>
-                                {/* {open === title && <ul className={`pl-6 list-disc mt-4 md:block hidden `}>
-                                        {skills && skills.map((string, index) => {
-                                            return <li className={`font-light text-sm`} key={index}>{string}</li>
-                                        })
-                                        }
-                                    </ul>
-                                    } */}
                             </div>
 
                             <div className='flex text-lg text-right font-medium bg-white rounded-lg p-2 h-fit'>
-                                <div>{fromYear} - {toYear}</div>
+                                <div>{item.fromYear} - {item.toYear}</div>
                             </div>
                         </div>
-                    </div>
+                    </ExperienceModal>
                 )
             })}
         </div>
@@ -180,6 +172,7 @@ const ExperienceContent = () => {
                     <div className='h-px w-full bg-gray-200 mt-4 mb-6'></div>
 
                     < ItemsList items={workExpItems} />
+                    <Modal />
                 </div>
             </div>
         </div>
