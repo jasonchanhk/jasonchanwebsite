@@ -10,7 +10,7 @@ interface RedirectButtonProps {
 
 const RedirectButton = ({ coloured, className, children }: RedirectButtonProps) => {
     return (
-        <div className={`${coloured ? 'bg-gray-100' : 'bg-white'} flex items-center w-fit h-fit rounded-full z-40 ${className}`}>
+        <div className={`${coloured ? 'bg-gray-100' : 'bg-white'} flex items-center w-fit h-fit rounded-full ${className}`}>
             <div className={`${coloured ? 'bg-white' : 'bg-lime-400'} w-11 h-11 rounded-full flex items-center justify-center ml-2 mr-4`}>
                 <IconContext.Provider value={{ color: `${coloured ? 'black' : 'white'}`, size: "1.5em" }}>
                     <IoChevronForward />

@@ -37,7 +37,6 @@ const AboutTitle = () => {
 }
 
 const About = () => {
-
     return (
         <div className={`py-24 mx-auto max-w-7xl px-16 md:px-20`}>
             <div className='flex flex-col md:flex-row md:items-stretch md:h-[40em] gap-8'>
@@ -79,7 +78,7 @@ const About = () => {
                 <div className='flex-1 text-white text-lg p-2'>
                     <AboutTitle />
                     <SelfIntroduction />
-                    <RedirectButton>
+                    <RedirectButton coloured={false}>
                         <a href='Jason Chan Resume.pdf'>Download Resume</a>
                     </RedirectButton>
                 </div>
@@ -131,5 +130,5 @@ const About = () => {
     )
 }
 
-export default About;
+export default About
 

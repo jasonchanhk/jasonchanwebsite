@@ -7,10 +7,10 @@ const ProjectHeader = () => {
       <div className='absolute inset-0 font-extrabold text-8xl w-full z-0 text-lime-300 opacity-50'>
         Latest Pojects
       </div>
-      <div className='absolute z-40 inset-0 flex justify-between mx-auto max-w-7xl px-16 md:px-20 text-white'>
+      <div className='absolute inset-0 flex justify-between mx-auto max-w-7xl px-16 md:px-20 text-white'>
         <div className='flex-col'>
-          <div className='font-semibold text-2xl underline tracking-wider underline-offset-8 z-40'>03. </div>
-          <div className='font-bold text-4xl md:text-6xl mt-2 tracking-wide z-40'>
+          <div className='font-semibold text-2xl underline tracking-wider underline-offset-8'>03. </div>
+          <div className='font-bold text-4xl md:text-6xl mt-2 tracking-wide'>
             My&nbsp;
             <span className='text-indigo-600'>Latest Projects&nbsp;</span>
           </div>
@@ -23,4 +23,4 @@ const ProjectHeader = () => {
   )
 }
 
-export default ProjectHeader;
+export default ProjectHeader

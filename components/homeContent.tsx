@@ -59,4 +59,4 @@ const HomeContent = () => {
     )
 }
 
-export default HomeContent;
+export default HomeContent

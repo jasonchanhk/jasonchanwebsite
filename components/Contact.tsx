@@ -42,10 +42,10 @@ const ContactTitle = () => {
             <div className='absolute inset-0 font-extrabold text-8xl w-full z-0 text-gray-50'>
                 Contact
             </div>
-            <div className='absolute z-40 inset-0 text-black'>
+            <div className='absolute inset-0 text-black'>
                 <div className='flex-col'>
-                    <div className='font-semibold text-2xl underline tracking-wider underline-offset-8 z-40'>04. </div>
-                    <div className='font-bold text-4xl md:text-6xl mt-2 tracking-wide z-40'>
+                    <div className='font-semibold text-2xl underline tracking-wider underline-offset-8 '>04. </div>
+                    <div className='font-bold text-4xl md:text-6xl mt-2 tracking-wide'>
                         Let&apos;s&nbsp;
 
                         <span className='text-lime-400'>Connect</span>&nbsp;&
