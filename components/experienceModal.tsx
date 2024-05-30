@@ -62,9 +62,9 @@ const ExperienceModal = ({ className, children, item }: ExperienceModalProps) =>
 
                                 <div className="mb-10">
                                     <ul className="list-disc pl-5">
-                                        {item.skills.map((skill) => {
+                                        {item.skills.map((skill, index) => {
                                             return (
-                                                <li className="py-1 text-balance">{skill}</li>
+                                                <li className="py-1 text-balance" key={index}>{skill}</li>
                                             )
                                         })}
                                     </ul>
