@@ -96,13 +96,11 @@ const ItemsList = ({ items }: itemsListProps) => {
         <div>
             {items.map((item, index) => {
                 return (
-                    <ExperienceModal key={index} className={`text-black ${item.skills ? 'cursor-pointer':''}`} item={item}>
+                    <ExperienceModal key={index} className={`text-black ${item.skills ? 'cursor-pointer hover:text-gray-500' : ''}`} item={item}>
                         <div className='flex mb-8 justify-between'>
                             <div className='flex-col'>
-                                <div className=' justify-between items-center'>
-                                    <h2 className="text-2xl font-medium pb-2">{item.title}</h2>
-                                    <h3 className='text-lg font-light text-gray-800'>{item.place}</h3>
-                                </div>
+                                <h2 className="text-2xl font-medium pb-2">{item.title}</h2>
+                                <h3 className='text-lg font-light'>{item.place}</h3>
                             </div>
 
                             <div className='flex text-lg text-right font-medium bg-white rounded-lg p-2 h-fit'>

@@ -13,13 +13,13 @@ interface ExperienceModalProps {
 const ExperienceModal = ({ className, children, item }: ExperienceModalProps) => {
     const [showModal, setShowModal] = useState<boolean>(false);
 
-    useEffect(() => {
-        if (showModal) {
-            document.documentElement.style.overflow = "hidden"
-        } else {
-            document.documentElement.style.overflow = ""
-        }
-    }, [showModal]);
+    // useEffect(() => {
+    //     if (showModal) {
+    //         document.documentElement.style.overflow = "hidden"
+    //     } else {
+    //         document.documentElement.style.overflow = ""
+    //     }
+    // }, [showModal]);
 
     return (
         <>
@@ -72,7 +72,7 @@ const ExperienceModal = ({ className, children, item }: ExperienceModalProps) =>
                             </div>
                         </div>
                     </div>
-                    <div className="opacity-25 fixed inset-0 z-40 bg-black" onClick={() => console.log('clicking background')}></div>
+                    <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
                 </>
             ) : null}
         </>
