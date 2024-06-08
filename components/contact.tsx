@@ -31,7 +31,7 @@ const Contact = () => {
 const Invitation = () => {
     return (
         <div>
-            Year ago I moved to London looking for a new start. I challenged myself to code because I needed a breakthrough in life.
+            Whether it's a new project, a brainstorming session, or just to chat, I'm all ears and interested. Let's create something awesome together. Look forward to hear from you!
         </div>
     )
 }

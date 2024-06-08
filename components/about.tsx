@@ -6,12 +6,12 @@ import RedirectButton from "./redirectButton";
 
 const SelfIntroduction = () => {
     return (
-        <div>
-            Year ago I moved to London looking for a new start. I challenged myself to code because I needed a breakthrough in life.
-            <br /><br />
-            It was tough at first to study without any teaching guidance. Yet I soon managed to utilize free online resources constructing my own curriculum and learning system, which brought me tremendous joy and satisfaction.
-            <br /><br />
-            I was greatly encouraged by the fact that programming is for everyone and equal to everyone who is hard-working.
+        <div className="drop-shadow-sm pr-12 text-base leading-snug mb-12">
+            <p className="">I’m a software engineer with 2+ years of industry experience, focusing on JavaScript and object-oriented programming. </p>
+            <br />
+            <p>I don’t just stick to the technical side; My background in politics actually helps me to look at the bigger picture to make sure everything fits together smoothly. Also I can easily talk to different people and explain complex ideas to them.</p>
+            <br />
+            <p>I’m always looking to grow my skills and work on bigger projects where I can make a real impact with innovative and practical solutions.</p>
         </div>
     )
 }
@@ -78,8 +78,8 @@ const About = () => {
                 <div className='flex-1 text-white text-lg p-2'>
                     <AboutTitle />
                     <SelfIntroduction />
-                    <RedirectButton coloured={false}>
-                        <a href='Jason Chan Resume.pdf'>Download Resume</a>
+                    <RedirectButton coloured={false} className="">
+                        <a href="Jason Chan Resume 2024.pdf" target="_blank" rel="noreferrer">Download Resume</a>
                     </RedirectButton>
                 </div>
                 {/* <div className='flex flex-col text-base font-light py-4 md:py-0 gap-4 text-amber-50 md:self-end md:pr-10 bg-white'>
