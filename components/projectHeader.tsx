@@ -4,7 +4,7 @@ import styles from '../styles/Home.module.css';
 const ProjectHeader = () => {
   return (
     <div className={`md:top-24 ${styles.titletext} text-black relative h-36 w-full whitespace-nowrap overflow-x-hidden`}>
-      <div className='absolute inset-0 font-extrabold text-8xl w-full z-0 text-lime-300 opacity-50'>
+      <div className='absolute inset-0 font-extrabold text-8xl w-full z-0 text-lime-300/60'>
         Latest Pojects
       </div>
       <div className='absolute inset-0 flex justify-between mx-auto max-w-7xl px-16 md:px-20 text-white'>
@@ -15,9 +15,6 @@ const ProjectHeader = () => {
             <span className='text-indigo-600'>Latest Projects&nbsp;</span>
           </div>
         </div>
-        <RedirectButton className='mt-10 text-lg' coloured={false}>
-          <a href="https://github.com/jasonchanhk" target="_blank" rel="noreferrer">View All Projects</a>
-        </RedirectButton>
       </div>
     </div>
   )
