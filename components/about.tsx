@@ -9,9 +9,9 @@ const SelfIntroduction = () => {
         <div className="drop-shadow-sm pr-12 text-base leading-snug mb-12">
             <p className="">I’m a software engineer with 2+ years of industry experience, focusing on JavaScript and object-oriented programming. </p>
             <br />
-            <p>I don’t just stick to the technical side; My background in politics actually helps me to look at the bigger picture to make sure everything fits together smoothly. Also I can easily talk to different people and explain complex ideas to them.</p>
+            <p>I don’t just stick to the technical side; My background in community work helps me to look at the bigger picture. It allows me to easily talk to different people and explain complex ideas to them.</p>
             <br />
-            <p>I’m always looking to grow my skills and work on bigger projects where I can make a real impact with innovative and practical solutions.</p>
+            <p>I maintain an active lifestyle and constantly challenge myself with new experiences. I approach everything with a positive mindset, always looking for opportunities to grow and improve.</p>
         </div>
     )
 }
@@ -44,15 +44,7 @@ const About = () => {
                 <div className='flex-1 bg-gray-50 p-2 grid grid-rows-2 grid-flow-col gap-2 rounded-2xl'>
                     <div className='h-full w-full relative'>
                         <Image
-                            src="/images/25d9f914-e4e4-4456-9972-caf87407d6aa.JPG"
-                            alt="Picture of the author"
-                            layout='fill'
-                            objectFit="cover" // change to suit your needs
-                            className="rounded-xl" />
-                    </div>
-                    <div className='h-full w-full relative'>
-                        <Image
-                            src="/images/Screenshot_2024-05-06_at_20.45.38-removebg-preview.PNG"
+                            src="/images/me-flying.png"
                             alt="Picture of the author"
                             layout='fill'
                             objectFit="cover" // change to suit your needs
@@ -60,19 +52,27 @@ const About = () => {
                     </div>
                     <div className='h-full w-full relative'>
                         <Image
-                            src="/images/25d9f914-e4e4-4456-9972-caf87407d6aa.JPG"
+                            src="/images/me-reading.png"
                             alt="Picture of the author"
                             layout='fill'
                             objectFit="cover" // change to suit your needs
-                            className="rounded-xl" />
+                            className="rounded-xl grayscale" />
                     </div>
                     <div className='h-full w-full relative'>
                         <Image
-                            src="/images/25d9f914-e4e4-4456-9972-caf87407d6aa.JPG"
+                            src="/images/me-basketballing.png"
                             alt="Picture of the author"
                             layout='fill'
                             objectFit="cover" // change to suit your needs
-                            className="rounded-xl" />
+                            className="rounded-xl grayscale" />
+                    </div>
+                    <div className='h-full w-full relative'>
+                        <Image
+                            src="/images/me-smiling.png"
+                            alt="Picture of the author"
+                            layout='fill'
+                            objectFit="cover" // change to suit your needs
+                            className="rounded-xl grayscale" />
                     </div>
                 </div>
                 <div className='flex-1 text-white text-lg p-2'>
