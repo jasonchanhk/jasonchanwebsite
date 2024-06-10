@@ -31,7 +31,7 @@ const Contact = () => {
 const Invitation = () => {
     return (
         <div>
-            Whether it's a new project, a brainstorming session, or just to chat, I'm all ears and interested. Let's create something awesome together. Look forward to hear from you!
+            Whether it&apos;s a new project, a brainstorming session, or just to chat, I&apos;m all ears and interested. Let&apos;s create something awesome together. Look forward to hear from you!
         </div>
     )
 }
