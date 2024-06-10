@@ -6,7 +6,7 @@ import RedirectButton from "./redirectButton";
 
 const SelfIntroduction = () => {
     return (
-        <div className="drop-shadow-sm md:pr-12 md:text-base text-sm leading-snug mb-6 md:mb-12">
+        <div className="md:pr-12 md:text-base text-sm leading-snug mb-6 md:mb-12">
             <p className="">I’m a software engineer with 2+ years of industry experience, focusing on JavaScript and object-oriented programming. </p>
             <br />
             <p>I don’t just stick to the technical side; My background in community work helps me to look at the bigger picture. It allows me to easily talk to different people and explain complex ideas to them.</p>
@@ -19,7 +19,7 @@ const SelfIntroduction = () => {
 const AboutTitle = () => {
     return (
         <div className={` ${styles.titletext} relative h-40 md:h-52 w-full whitespace-nowrap overflow-x-hidden`}>
-            <div className='absolute inset-0 font-extrabold text-7xl md:text-8xl w-full z-0 text-lime-300/60'>
+            <div className='absolute inset-0 font-extrabold text-7xl md:text-8xl w-full z-0 text-lime-400/60'>
                 About <br /> me
             </div>
             <div className='absolute z-40 inset-0 text-white'>

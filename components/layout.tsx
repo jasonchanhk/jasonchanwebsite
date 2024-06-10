@@ -38,7 +38,7 @@ const Layout = ({ children, title }: Props) => {
                 <title>{title}</title>
                 <meta charSet="utf-8" />
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-                <link rel="icon" href="/images/logo.png" />
+                <link rel="icon" href="/images/logo-new.png" />
             </Head>
 
             {/* navbar with responsiveness */}
@@ -46,7 +46,7 @@ const Layout = ({ children, title }: Props) => {
                 <div className={` h-24 px-6 md:px-12 text-black flex justify-between items-center ${styles.titletext}`}>
 
                     <div className={`flex items-center cursor-pointer font-extrabold text-3xl ${styles.titletext}`}>
-                        <Scrolllink to={'home'} spy={true} smooth={true} className=' text-black hover:text-lime-400 hover:underline underline-offset-4'>
+                        <Scrolllink to={'home'} spy={true} smooth={true} className=' text-black hover:text-lime-500 hover:underline underline-offset-4'>
                             <span>J</span>
                         </Scrolllink>
                     </div>
@@ -55,15 +55,15 @@ const Layout = ({ children, title }: Props) => {
                             menuItems.map((item, index) => {
                                 return (
                                     <button key={index}>
-                                        <Scrolllink to={item} spy={true} smooth={true} className=' hover:text-lime-400 hover:underline underline-offset-4 '>
+                                        <Scrolllink to={item} spy={true} smooth={true} className=' hover:text-lime-500 hover:underline underline-offset-4 '>
                                             <span className='font-medium capitalize'>{item}</span>
                                         </Scrolllink>
                                     </button>
                                 )
                             })
                         }
-                        <a href='Jason Chan Resume.pdf'>
-                            <button className='px-8 py-2 border border-lime-400 rounded-full text-white bg-lime-400 font-medium hover:bg-white hover:border-black hover:text-black hover:underline underline-offset-4'>
+                        <a href='Jason Chan Resume 2024.pdf'>
+                            <button className='px-8 py-2 rounded-full text-white bg-lime-500 font-medium hover:bg-lime-400'>
                                 Resume
                             </button>
                         </a>
@@ -91,7 +91,7 @@ const Layout = ({ children, title }: Props) => {
                     {
                         menuItems.map((item, index) => {
                             return (
-                                <button className='active:text-lime-400 active:underline underline-offset-4 ' key={index}>
+                                <button className='active:text-lime-500 active:underline underline-offset-4 ' key={index}>
                                     <Scrolllink to={item} spy={true} smooth={true} onClick={() => setShowSidebar(!showSidebar)}>
                                         <span className='font-medium capitalize'>{item}</span>
                                     </Scrolllink>
@@ -100,7 +100,7 @@ const Layout = ({ children, title }: Props) => {
                         })
                     }
 
-                    <button className={`px-8 py-2 border ${styles.titletext} font-mediumborder-lime-400 rounded-full text-white bg-lime-400 font-medium active:bg-white active:border-black active:text-black active:underline underline-offset-4`}>Resume</button>
+                    <button className={`px-8 py-2 border ${styles.titletext} font-mediumborder-lime-400 rounded-full text-white bg-lime-500 font-medium active:bg-white active:border-black active:text-black active:underline underline-offset-4`}>Resume</button>
                 </div>
             </div>
 

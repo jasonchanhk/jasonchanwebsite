@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from '../styles/Home.module.css';
 
-import { IoChevronBack } from 'react-icons/io5'
+import { IoChevronForward, IoChevronBack } from 'react-icons/io5'
 import { IoSchool } from "react-icons/io5";
 import { MdOutlineWork } from "react-icons/md";
 
@@ -106,7 +106,7 @@ const ItemsList = ({ items }: itemsListProps) => {
                                 <div className='text-sm md:text-base font-light'></div>
                             </div>
 
-                            <div className='rounded-full bg-lime-400 text-white p-2 md:text-lg h-fit w-fit cursor-pointer'>
+                            <div className='rounded-full bg-lime-500 hover:bg-lime-400 text-white p-1 md:text-lg h-fit w-fit cursor-pointer'>
                                 <IoChevronBack onClick={() => setExperienceItem(null)} />
                             </div>
                         </div>
@@ -124,8 +124,14 @@ const ItemsList = ({ items }: itemsListProps) => {
                             <div key={index} className={`text-black ${item.skills ? 'cursor-pointer hover:text-gray-500' : ''}`} onClick={() => item.skills && setExperienceItem(item)}>
                                 <div className='flex flex-col md:flex-row mb-4 md:mb-8 justify-between'>
                                     <div className='flex flex-col'>
-                                        <h2 className="text-md md:text-2xl font-medium md:pb-2">{item.title}</h2>
-                                        <h3 className='text-sm md:text-lg font-light'>{item.place}</h3>
+                                        <h2 className="text-md md:text-2xl font-medium md:pb-2 flex items-center">
+                                            {item.title}
+                                            {item.skills && <span className="rounded-full bg-lime-500 hover:bg-lime-400 text-white p-1 ml-2 text-sm md:text-lg"><IoChevronForward /></span>}
+                                        </h2>
+                                        <h3 className='text-sm md:text-lg font-light flex items-center'>
+                                            {item.place}
+                                            {/* {item.skills && <span className="rounded-full bg-lime-500 text-white p-1 ml-2 text-sm md:text-lg"><IoChevronForward /></span>} */}
+                                        </h3>
                                     </div>
 
                                     <div className='flex text-sm font-light md:text-lg md:text-right md:font-medium md:bg-white md:rounded-lg md:p-2 h-fit w-fit'>
@@ -147,10 +153,10 @@ const ExperienceContent = () => {
             <div className='flex flex-col md:flex-row md:items-stretch md:min-h-7xl gap-8 md:pt-10'>
                 <div className='flex-1 bg-gray-50 rounded-2xl p-6 md:p-10'>
                     <div className="flex items-center ">
-                        <div className='bg-lime-400 rounded-full w-14 h-14 flex flex-none items-center justify-center text-white font-medium text-3xl z-20'>
+                        <div className='bg-lime-500 rounded-full w-14 h-14 flex flex-none items-center justify-center text-white font-medium text-3xl z-20'>
                             <IoSchool />
                         </div>
-                        <div className={`font-bold text-3xl md:py-4 pl-4 tracking-wide text-lime-400 ${styles.titletext}`}>
+                        <div className={`font-bold text-3xl md:py-4 pl-4 tracking-wide text-lime-500 ${styles.titletext}`}>
                             Education
                         </div>
                     </div>
@@ -161,10 +167,10 @@ const ExperienceContent = () => {
                 </div>
                 <div className='flex-1 bg-gray-50 rounded-2xl p-6 md:p-10'>
                     <div className="flex items-center">
-                        <div className='bg-lime-400 rounded-full mr-2 w-14 h-14 flex flex-none items-center justify-center text-white font-medium text-3xl z-20'>
+                        <div className='bg-lime-500 rounded-full mr-2 w-14 h-14 flex flex-none items-center justify-center text-white font-medium text-3xl z-20'>
                             <MdOutlineWork />
                         </div>
-                        <div className={`font-bold w-fit text-3xl md:py-4 tracking-wide text-lime-400 ${styles.titletext}`}>
+                        <div className={`font-bold w-fit text-3xl md:py-4 tracking-wide text-lime-500 ${styles.titletext}`}>
                             Work Experience
                         </div>
                     </div>
