@@ -48,7 +48,6 @@ const Home: NextPage = () => {
         <Contact />
       </Section>
 
-
     </Layout >
   )
 }

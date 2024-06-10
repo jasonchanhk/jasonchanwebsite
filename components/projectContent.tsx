@@ -38,39 +38,39 @@ const projectItems: Array<projectItemsProps> = [
     link: 'https://jasonchanhk.github.io/gymbeginnergym/#/home',
     image: "/images/Gym-demo.png",
     imgLeft: true,
-    stack: ['React', 'Bootstrap', 'Rapid API', 'Google Map API']
+    stack: ['React', 'Bootstrap', 'Rapid API']
   },
 ]
 
 const ProjectContent = () => {
   return (
-    <div className={`py-24 mx-auto max-w-7xl px-16 md:px-20`}>
+    <div className={`py-12 md:py-24 mx-auto px-6 md:px-20 max-w-7xl`}>
       <div className='flex flex-col'>
         {
           projectItems.map(({ name1, name2, description, link, image, imgLeft, stack }, index) => {
             return (
-              <div className={`flex text-black bg-white rounded-2xl p-4 mb-8 ${imgLeft && 'flex-row-reverse'}`} key={index} >
-                <div className='flex-1'>
-                  <div className='px-12 py-8'>
+              <div className={`flex flex-col md:flex-row text-black bg-white rounded-2xl p-4 mb-8 ${imgLeft && 'flex-row-reverse'}`} key={index} >
+                <div className='md:flex-1'>
+                  <div className='md:px-12 md:py-8'>
                     <div className='flex gap-2'>
                       {stack.map((tech, index) => {
                         return (
-                          <div className='bg-lime-400 text-black px-4 py-2 rounded-full text-xs'>{tech}</div>
+                          <div className='bg-lime-400 text-black px-2 py-1 md:px-4 md:py-2 rounded-full text-xs'>{tech}</div>
                         )
                       })}
                     </div>
-                    <div className={`font-semibold text-3xl py-6 tracking-wider ${styles.titletext}`}>
+                    <div className={`font-semibold text-xl md:text-3xl py-6 tracking-wider ${styles.titletext}`}>
                       {name1}
                       <br />
                       {name2}
                     </div>
-                    <div className='text-md font-light pt-1 pb-4'>{description}</div>
-                    <a href={`${link}`} target="_blank" rel="noreferrer" className={`${styles.titletext} flex items-center w-fit pt-4 font-semibold hover:text-gray-500`}>
+                    <div className='text-sm md:text-md font-light pt-1 pb-4'>{description}</div>
+                    <a href={`${link}`} target="_blank" rel="noreferrer" className={`${styles.titletext} flex items-center text-sm md:text-md w-fit pt-4 font-semibold hover:text-gray-500`}>
                       View Website &gt;
                       </a>
                   </div>
                 </div>
-                <div className='flex-1 relative h-96 rounded-md shadow-lg cursor-pointer hover:shadow-gray-500'>
+                <div className='md:flex-1 relative h-52 md:h-96 rounded-md shadow-lg cursor-pointer hover:shadow-gray-500'>
                   <a href={`${link}`} target="_blank" rel="noreferrer">
                     <Image
                       src={image}

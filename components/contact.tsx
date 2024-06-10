@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import styles from '../styles/Home.module.css'
 import RedirectButton from './redirectButton'
 import Link from 'next/link'
@@ -13,14 +13,14 @@ import { copyEvent } from '../utils/copyEvent'
 
 const Contact = () => {
     return (
-        <div className={`py-24 mx-auto max-w-7xl px-16 md:px-20`}>
+        <div className={`py-12 md:py-24 mx-auto px-6 md:px-20 max-w-7xl`}>
             <div className='flex flex-col md:flex-row md:items-stretch md:h-[40em] gap-8'>
-                <div className='flex-1 text-black text-lg p-2'>
+                <div className='flex-1 text-black text-sm md:text-lg p-3'>
                     <ContactTitle />
                     <Invitation />
                     <ContactList />
                 </div>
-                <div className='flex-1 text-black text-lg p-2 flex flex-col justify-end'>
+                <div className='hidden flex-1 text-black text-sm md:text-lg p-3 md:flex flex-col justify-end'>
                     <MessageForm />
                 </div>
             </div>
@@ -37,17 +37,31 @@ const Invitation = () => {
 }
 
 const ContactTitle = () => {
+    const [isMobile, setIsMobile] = useState(false)
+
+    const handleResize = () => {
+      if (window.innerWidth < 720) {
+        setIsMobile(true)
+      } else {
+        setIsMobile(false)
+      }
+    }
+  
+    useEffect(() => {
+      window.addEventListener("resize", handleResize)
+    })
+
     return (
         <div className={` ${styles.titletext} relative h-52 w-full whitespace-nowrap overflow-x-hidden`}>
-            <div className='absolute inset-0 font-extrabold text-8xl w-full z-0 text-gray-50'>
+            <div className='absolute inset-0 font-extrabold text-7xl md:text-8xl w-full z-0 text-gray-50'>
                 Contact
             </div>
             <div className='absolute inset-0 text-black'>
                 <div className='flex-col'>
-                    <div className='font-semibold text-2xl underline tracking-wider underline-offset-8 '>04. </div>
+                    <div className='font-semibold text-2xl underline tracking-wider underline-offset-8 pt-10 md:pt-0'>04. </div>
                     <div className='font-bold text-4xl md:text-6xl mt-2 tracking-wide'>
                         Let&apos;s&nbsp;
-
+                        {isMobile && <br />}
                         <span className='text-lime-400'>Connect</span>&nbsp;&
                         <br />
                         <span className='text-lime-400'>Collaborate</span>
@@ -65,7 +79,7 @@ const ContactList = () => {
             <div className='flex flex-col gap-3 pt-10 md:self-end'>
 
                 <div className='flex items-center cursor-pointer w-fit' onClick={copyEvent}>
-                    <div className='w-14 h-14 rounded-full bg-lime-400 border-2 border-white flex justify-center items-center'>
+                    <div className='w-10 h-10 md:w-14 md:h-14 rounded-full bg-lime-400 border-2 border-white flex justify-center items-center'>
                         <MdEmail />
                     </div>
                     <div className='pl-2'>chanjky97@gmail.com</div>
@@ -73,7 +87,7 @@ const ContactList = () => {
 
                 <Link passHref href="https://github.com/jasonchanhk">
                     <div className='flex items-center cursor-pointer w-fit'>
-                        <div className='w-14 h-14 rounded-full bg-lime-400 border-2 border-white flex justify-center items-center'>
+                        <div className='w-10 h-10 md:w-14 md:h-14 rounded-full bg-lime-400 border-2 border-white flex justify-center items-center'>
                             <FiGithub />
                         </div>
                         <div className='pl-2'>github.com/jasonchanhk</div>
@@ -81,9 +95,8 @@ const ContactList = () => {
                 </Link>
 
                 <Link passHref href="https://www.linkedin.com/in/jason-chan-361266217/">
-
                     <div className='flex items-center cursor-pointer w-fit'>
-                        <div className='w-14 h-14 rounded-full bg-lime-400 border-2 border-white flex justify-center items-center'>
+                        <div className='w-10 h-10 md:w-14 md:h-14 rounded-full bg-lime-400 border-2 border-white flex justify-center items-center'>
                             <FiLinkedin />
                         </div>
                         <div className='pl-2'>linkedin.com/in/jasonchanky</div>
@@ -91,7 +104,7 @@ const ContactList = () => {
                 </Link>
 
                 <div className='flex items-center w-fit'>
-                    <div className='w-14 h-14 rounded-full bg-lime-400 border-2 border-white flex justify-center items-center'>
+                    <div className='w-10 h-10 md:w-14 md:h-14 rounded-full bg-lime-400 border-2 border-white flex justify-center items-center'>
                         <IoLocationSharp />
                     </div>
                     <div className='pl-2'>Richmond, London</div>

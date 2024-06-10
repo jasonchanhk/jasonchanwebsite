@@ -97,13 +97,13 @@ const ItemsList = ({ items }: itemsListProps) => {
             {items.map((item, index) => {
                 return (
                     <ExperienceModal key={index} className={`text-black ${item.skills ? 'cursor-pointer hover:text-gray-500' : ''}`} item={item}>
-                        <div className='flex mb-8 justify-between'>
-                            <div className='flex-col'>
-                                <h2 className="text-2xl font-medium pb-2">{item.title}</h2>
-                                <h3 className='text-lg font-light'>{item.place}</h3>
+                        <div className='flex flex-col md:flex-row mb-4 md:mb-8 justify-between'>
+                            <div className='flex flex-col'>
+                                <h2 className="text-md md:text-2xl font-medium md:pb-2">{item.title}</h2>
+                                <h3 className='text-sm md:text-lg font-light'>{item.place}</h3>
                             </div>
 
-                            <div className='flex text-lg text-right font-medium bg-white rounded-lg p-2 h-fit'>
+                            <div className='flex text-sm font-light md:text-lg md:text-right md:font-medium md:bg-white md:rounded-lg md:p-2 h-fit w-fit'>
                                 <div>{item.fromYear} - {item.toYear}</div>
                             </div>
                         </div>
@@ -117,18 +117,14 @@ const ItemsList = ({ items }: itemsListProps) => {
 const ExperienceContent = () => {
 
     return (
-        <div className={`py-24 mx-auto max-w-7xl px-16 md:px-20`}>
-            <div className='flex flex-col md:flex-row md:items-stretch md:min-h-7xl gap-8 pt-10'>
-                <div className='flex-1 bg-gray-50 rounded-2xl p-10'>
-                    <div className="flex items-center text-lime-400">
-                        <div className='bg-lime-400 rounded-full w-14 h-14 flex items-center justify-center'>
-                            <IconContext.Provider value={{ size: "1.125em" }}>
-                                <span className='text-white font-medium text-3xl z-20'>
-                                    <IoSchool />
-                                </span>
-                            </IconContext.Provider>
+        <div className={`py-12 md:py-24 mx-auto px-6 md:px-20 max-w-7xl`}>
+            <div className='flex flex-col md:flex-row md:items-stretch md:min-h-7xl gap-8 md:pt-10'>
+                <div className='flex-1 bg-gray-50 rounded-2xl p-6 md:p-10'>
+                    <div className="flex items-center ">
+                        <div className='bg-lime-400 rounded-full w-14 h-14 flex flex-none items-center justify-center text-white font-medium text-3xl z-20'>
+                            <IoSchool />
                         </div>
-                        <div className={`font-bold text-3xl py-4 pl-4 tracking-wide ${styles.titletext}`}>
+                        <div className={`font-bold text-3xl md:py-4 pl-4 tracking-wide text-lime-400 ${styles.titletext}`}>
                             Education
                         </div>
                     </div>
@@ -137,16 +133,12 @@ const ExperienceContent = () => {
 
                     < ItemsList items={educationExpItems} />
                 </div>
-                <div className='flex-1 bg-gray-50 rounded-2xl p-8'>
-                    <div className="flex items-center text-lime-400">
-                        <div className='bg-lime-400 rounded-full w-14 h-14 flex items-center justify-center'>
-                            <IconContext.Provider value={{ size: "1.125em" }}>
-                                <span className='text-white font-medium text-3xl z-20'>
-                                    <MdOutlineWork />
-                                </span>
-                            </IconContext.Provider>
+                <div className='flex-1 bg-gray-50 rounded-2xl p-6 md:p-10'>
+                    <div className="flex items-center">
+                        <div className='bg-lime-400 rounded-full mr-2 w-14 h-14 flex flex-none items-center justify-center text-white font-medium text-3xl z-20'>
+                            <MdOutlineWork />
                         </div>
-                        <div className={`font-bold text-3xl py-4 pl-4 tracking-wide ${styles.titletext}`}>
+                        <div className={`font-bold w-fit text-3xl md:py-4 tracking-wide text-lime-400 ${styles.titletext}`}>
                             Work Experience
                         </div>
                     </div>

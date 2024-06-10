@@ -6,7 +6,7 @@ import RedirectButton from "./redirectButton";
 
 const SelfIntroduction = () => {
     return (
-        <div className="drop-shadow-sm pr-12 text-base leading-snug mb-12">
+        <div className="drop-shadow-sm md:pr-12 md:text-base text-sm leading-snug mb-6 md:mb-12">
             <p className="">I’m a software engineer with 2+ years of industry experience, focusing on JavaScript and object-oriented programming. </p>
             <br />
             <p>I don’t just stick to the technical side; My background in community work helps me to look at the bigger picture. It allows me to easily talk to different people and explain complex ideas to them.</p>
@@ -18,8 +18,8 @@ const SelfIntroduction = () => {
 
 const AboutTitle = () => {
     return (
-        <div className={` ${styles.titletext} relative h-52 w-full whitespace-nowrap overflow-x-hidden`}>
-            <div className='absolute inset-0 font-extrabold text-8xl w-full z-0 text-lime-300/60'>
+        <div className={` ${styles.titletext} relative h-40 md:h-52 w-full whitespace-nowrap overflow-x-hidden`}>
+            <div className='absolute inset-0 font-extrabold text-7xl md:text-8xl w-full z-0 text-lime-300/60'>
                 About <br /> me
             </div>
             <div className='absolute z-40 inset-0 text-white'>
@@ -38,10 +38,10 @@ const AboutTitle = () => {
 
 const About = () => {
     return (
-        <div className={`py-24 mx-auto max-w-7xl px-16 md:px-20`}>
-            <div className='flex flex-col md:flex-row md:items-stretch md:h-[40em] gap-8'>
+        <div className={`py-12 md:py-24 mx-auto px-6 md:px-20 max-w-7xl`}>
+            <div className='flex flex-col md:flex-row md:items-stretch gap-8'>
 
-                <div className='flex-1 bg-gray-50 p-2 grid grid-rows-2 grid-flow-col gap-2 rounded-2xl'>
+                <div className='flex-1 bg-gray-50 p-2 md:grid grid-rows-2 grid-flow-col gap-2 rounded-2xl h-[640px] hidden'>
                     <div className='h-full w-full relative'>
                         <Image
                             src="/images/me-flying.png"
@@ -78,53 +78,10 @@ const About = () => {
                 <div className='flex-1 text-white text-lg p-2'>
                     <AboutTitle />
                     <SelfIntroduction />
-                    <RedirectButton coloured={false} className="">
+                    <RedirectButton coloured={false}>
                         <a href="Jason Chan Resume 2024.pdf" target="_blank" rel="noreferrer">Download Resume</a>
                     </RedirectButton>
                 </div>
-                {/* <div className='flex flex-col text-base font-light py-4 md:py-0 gap-4 text-amber-50 md:self-end md:pr-10 bg-white'>
-                <div>Year ago I moved to London looking for a new start. I challenged myself to code because I needed a breakthrough in life.</div>
-                <div>It was tough at first to study without any teaching guidance. Yet I soon managed to utilize free online resources constructing my own curriculum and learning system, which brought me tremendous joy and satisfaction.  </div>
-                <div>I was greatly encouraged by the fact that programming is for everyone and equal to everyone who is hard-working.</div>
-            </div>
-            <div className='flex flex-col md:flex-row justify-end gap-4 bg-white'>
-                <div className='flex flex-col gap-4'>
-                    <div className='h-[26rem] w-full relative shadow-lg shadow-amber-800/50 hover:shadow-amber-800 rounded-md'>
-                        <Image
-                            src="/images/25d9f914-e4e4-4456-9972-caf87407d6aa.JPG"
-                            alt="Picture of the author"
-                            layout='fill'
-                            objectFit="cover" // change to suit your needs
-                            className="rounded-md " />
-                    </div>
-                    <div className='h-[20rem] w-72 md:w-80 relative shadow-lg shadow-amber-800/50 hover:shadow-amber-800 rounded-md'>
-                        <Image
-                            src="/images/IMG_0873.jpg"
-                            alt="Picture of the author"
-                            layout='fill'
-                            objectFit="cover" // change to suit your needs
-                            className="rounded-md object-none origin-top" />
-                    </div>
-                </div>
-                <div className='flex flex-col gap-4'>
-                    <div className='h-[20rem] w-72 md:w-80 relative shadow-lg shadow-amber-800/50 hover:shadow-amber-800 rounded-md'>
-                        <Image
-                            src="/images/IMG_2139.jpg"
-                            alt="Picture of the author"
-                            layout='fill'
-                            objectFit="cover" // change to suit your needs
-                            className="rounded-md" />
-                    </div>
-                    <div className='h-[26rem] w-full relative shadow-lg shadow-amber-800/50 hover:shadow-amber-800 rounded-md'>
-                        <Image
-                            src="/images/IMG_3597.jpg"
-                            alt="Picture of the author"
-                            layout='fill'
-                            objectFit="cover" // change to suit your needs
-                            className="rounded-md" />
-                    </div>
-                </div>
-            </div> */}
             </div>
         </div>
     )

@@ -7,7 +7,7 @@ import { copyEvent } from '../utils/copyEvent';
 
 const HomeContent = () => {
     return (
-        <div className={`py-24 mx-auto max-w-7xl px-16 md:px-20`}>
+        <div className={`py-12 md:py-24 mx-auto px-6 md:px-20 max-w-7xl`}>
             <div className='flex flex-col'>
                 <div className='flex justify-center text-2xl'>
                     <div className='flex items-center pb-6'>
@@ -23,9 +23,9 @@ const HomeContent = () => {
                             <div className='bg-lime-400 h-2'></div>
                         </div>
                     </div>
-                    <div className='flex justify-center'>Software Engineer</div>
+                    <div className='flex justify-center text-center'>Software Engineer</div>
                 </div>
-                <div className='mt-24 h-80 z-40 flex items-end'>
+                <div className='md:mt-32 h-72 z-40 flex justify-center items-end md:justify-start'>
                     {/* button */}
                     <div className='flex'>
                         <IconContext.Provider value={{ color: "white", size: "1.2rem" }}>
