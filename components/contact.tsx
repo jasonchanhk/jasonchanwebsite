@@ -116,7 +116,7 @@ const ContactList = () => {
 }
 
 const MessageForm = () => {
-    const form = useRef(null);
+    const form = useRef<HTMLFormElement>(null);
     const [messageStatus, setMessageStatus] = useState<string>('');
     const [errors, setErrors] = useState<string[]>([]);
 
