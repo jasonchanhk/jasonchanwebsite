@@ -13,7 +13,7 @@ type Props = {
 
 const Section = ({ children, id, colored, classname }: Props) => {
     return (
-        <div id={id} className={`${colored && 'bg-lime-400 text-white'} ${classname}`}>
+        <div id={id} className={`${colored && 'bg-lime-500 text-white'} ${classname}`}>
             {children}
         </div>)
 }

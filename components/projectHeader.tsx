@@ -18,7 +18,7 @@ const ProjectHeader = () => {
 
   return (
     <div className={`md:top-24 ${styles.titletext} text-black relative h-40 md:h-36 w-full whitespace-nowrap overflow-x-hidden`}>
-      <div className='absolute inset-0 font-extrabold text-7xl md:text-8xl w-full z-0 text-lime-300/60'>
+      <div className='absolute inset-0 font-extrabold text-7xl md:text-8xl w-full z-0 text-lime-400/60'>
         Latest Pojects
       </div>
       <div className='absolute inset-0 flex mx-auto max-w-7xl px-6 md:px-20 text-white'>

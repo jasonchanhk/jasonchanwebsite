@@ -62,9 +62,9 @@ const ContactTitle = () => {
                     <div className='font-bold text-4xl md:text-6xl mt-2 tracking-wide'>
                         Let&apos;s&nbsp;
                         {isMobile && <br />}
-                        <span className='text-lime-400'>Connect</span>&nbsp;&
+                        <span className='text-lime-500'>Connect</span>&nbsp;&
                         <br />
-                        <span className='text-lime-400'>Collaborate</span>
+                        <span className='text-lime-500'>Collaborate</span>
                     </div>
                 </div>
 
@@ -79,7 +79,7 @@ const ContactList = () => {
             <div className='flex flex-col gap-3 pt-10 md:self-end'>
 
                 <div className='flex items-center cursor-pointer w-fit' onClick={copyEvent}>
-                    <div className='w-10 h-10 md:w-14 md:h-14 rounded-full bg-lime-400 border-2 border-white flex justify-center items-center'>
+                    <div className='w-10 h-10 md:w-14 md:h-14 rounded-full bg-lime-500 hover:bg-lime-400 border-2 border-white flex justify-center items-center'>
                         <MdEmail />
                     </div>
                     <div className='pl-2'>chanjky97@gmail.com</div>
@@ -87,7 +87,7 @@ const ContactList = () => {
 
                 <Link passHref href="https://github.com/jasonchanhk">
                     <div className='flex items-center cursor-pointer w-fit'>
-                        <div className='w-10 h-10 md:w-14 md:h-14 rounded-full bg-lime-400 border-2 border-white flex justify-center items-center'>
+                        <div className='w-10 h-10 md:w-14 md:h-14 rounded-full bg-lime-500 hover:bg-lime-400 border-2 border-white flex justify-center items-center'>
                             <FiGithub />
                         </div>
                         <div className='pl-2'>github.com/jasonchanhk</div>
@@ -96,7 +96,7 @@ const ContactList = () => {
 
                 <Link passHref href="https://www.linkedin.com/in/jason-chan-361266217/">
                     <div className='flex items-center cursor-pointer w-fit'>
-                        <div className='w-10 h-10 md:w-14 md:h-14 rounded-full bg-lime-400 border-2 border-white flex justify-center items-center'>
+                        <div className='w-10 h-10 md:w-14 md:h-14 rounded-full bg-lime-500 hover:bg-lime-400 border-2 border-white flex justify-center items-center'>
                             <FiLinkedin />
                         </div>
                         <div className='pl-2'>linkedin.com/in/jasonchanky</div>
@@ -104,7 +104,7 @@ const ContactList = () => {
                 </Link>
 
                 <div className='flex items-center w-fit'>
-                    <div className='w-10 h-10 md:w-14 md:h-14 rounded-full bg-lime-400 border-2 border-white flex justify-center items-center'>
+                    <div className='w-10 h-10 md:w-14 md:h-14 rounded-full bg-lime-500 border-2 border-white flex justify-center items-center'>
                         <IoLocationSharp />
                     </div>
                     <div className='pl-2'>Richmond, London</div>

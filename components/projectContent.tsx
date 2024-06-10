@@ -55,7 +55,7 @@ const ProjectContent = () => {
                     <div className='flex gap-2'>
                       {stack.map((tech, index) => {
                         return (
-                          <div className='bg-lime-400 text-black px-2 py-1 md:px-4 md:py-2 rounded-full text-xs' key={index}>{tech}</div>
+                          <div className='bg-lime-500 text-white px-2 py-1 md:px-4 md:py-2 rounded-full text-sm' key={index}>{tech}</div>
                         )
                       })}
                     </div>

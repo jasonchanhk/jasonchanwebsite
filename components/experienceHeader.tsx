@@ -25,10 +25,10 @@ const ExperienceHeader = () => {
           <div className='font-semibold text-2xl underline tracking-wider underline-offset-8 z-40 pt-10 md:pt-0'>02. </div>
           <div className='font-bold text-4xl md:text-6xl mt-2 tracking-wide z-40 text-wrap'>
             My&nbsp;
-            <span className='text-lime-400'>Education&nbsp;</span>
+            <span className='text-lime-500'>Education&nbsp;</span>
             {isMobile && <br />}
             &&nbsp;
-            <span className='text-lime-400'>Work {isMobile && <br />}Experience </span>
+            <span className='text-lime-500'>Work {isMobile && <br />}Experience </span>
           </div>
         </div>
       </div>
