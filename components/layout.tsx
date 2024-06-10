@@ -38,7 +38,7 @@ const Layout = ({ children, title }: Props) => {
                 <title>{title}</title>
                 <meta charSet="utf-8" />
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-                <link rel="icon" href="/images/logo.png" />
+                <link rel="icon" href="/images/logo-new.png" />
             </Head>
 
             {/* navbar with responsiveness */}
@@ -62,7 +62,7 @@ const Layout = ({ children, title }: Props) => {
                                 )
                             })
                         }
-                        <a href='Jason Chan Resume.pdf'>
+                        <a href='Jason Chan Resume 2024.pdf'>
                             <button className='px-8 py-2 rounded-full text-white bg-lime-500 font-medium hover:bg-lime-400'>
                                 Resume
                             </button>
