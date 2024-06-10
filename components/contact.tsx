@@ -15,12 +15,12 @@ const Contact = () => {
     return (
         <div className={`py-12 md:py-24 mx-auto px-6 md:px-20 max-w-7xl`}>
             <div className='flex flex-col md:flex-row md:items-stretch md:h-[40em] gap-8'>
-                <div className='flex-1 text-black text-sm md:text-lg p-3'>
+                <div className='flex-1 text-black text-sm md:text-lg '>
                     <ContactTitle />
                     <Invitation />
                     <ContactList />
                 </div>
-                <div className='hidden flex-1 text-black text-sm md:text-lg p-3 md:flex flex-col justify-end'>
+                <div className='hidden flex-1 text-black text-sm md:text-lg md:flex flex-col justify-end'>
                     <MessageForm />
                 </div>
             </div>
@@ -40,15 +40,15 @@ const ContactTitle = () => {
     const [isMobile, setIsMobile] = useState(false)
 
     const handleResize = () => {
-      if (window.innerWidth < 720) {
-        setIsMobile(true)
-      } else {
-        setIsMobile(false)
-      }
+        if (window.innerWidth < 720) {
+            setIsMobile(true)
+        } else {
+            setIsMobile(false)
+        }
     }
-  
+
     useEffect(() => {
-      window.addEventListener("resize", handleResize)
+        window.addEventListener("resize", handleResize)
     })
 
     return (
@@ -117,13 +117,43 @@ const ContactList = () => {
 
 const MessageForm = () => {
     const form = useRef(null);
-    const [messageStatus, setMessageStatus] = useState<string>('')
+    const [messageStatus, setMessageStatus] = useState<string>('');
+    const [errors, setErrors] = useState<string[]>([]);
+
+    const validateForm = () => {
+        const currentForm = form.current;
+        const newErrors: string[] = [];
+
+        if (currentForm) {
+            const firstname = currentForm.firstname.value.trim();
+            const email = currentForm.email.value.trim();
+            const subject = currentForm.subject.value.trim();
+            const message = currentForm.message.value.trim();
+
+            if (!firstname) newErrors.push('firstname');
+            if (!email || !/\S+@\S+\.\S+/.test(email)) newErrors.push('email')
+            if (!subject) newErrors.push('subject')
+            if (!message) newErrors.push('message')
+        }
+
+        return newErrors;
+    };
 
     const handleSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
         event.preventDefault();
 
         const currentForm = form.current;
         if (currentForm == null) return;
+
+        const formErrors = validateForm();
+        if (formErrors.length > 0) {
+            setErrors(formErrors);
+            console.log(formErrors)
+            return;
+        } else {
+            setErrors([]);
+        }
+
         if (process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID == null ||
             process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID == null ||
             process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY == null
@@ -142,35 +172,29 @@ const MessageForm = () => {
             })
             .catch((error) => {
                 setMessageStatus('Failed...');
-                console.log(error.text)
-            }
-            );
-    }
+                console.log(error.text);
+            });
+    };
 
     return (
         <form ref={form} onSubmit={handleSubmit}>
             <div className='grid md:grid-cols-2 gap-5'>
-                <input type="text" placeholder='First Name' className='bg-gray-50 p-5 rounded-2xl' name='firstname' />
+                <input type="text" placeholder='First Name*' className={`bg-gray-50 p-5 rounded-2xl ${errors.find((element) => element = 'firstname') && 'border border-rose-400'}`} name='firstname' />
                 <input type="text" placeholder='Last Name' className='bg-gray-50 p-5 rounded-2xl' name='lastname' />
-                <input type="text" placeholder='Email' className='bg-gray-50 p-5 rounded-2xl' name='email' />
+                <input type="text" placeholder='Email*' className={`bg-gray-50 p-5 rounded-2xl ${errors.find((element) => element = 'email') && 'border border-rose-400'}`} name='email' />
                 <input type="text" placeholder='Phone Number' className='bg-gray-50 p-5 rounded-2xl' name='phone' />
-                <input type="text" placeholder='Subject' className='bg-gray-50 col-span-2 p-5 rounded-2xl' name='subject' />
-                <textarea placeholder='Message' className='bg-gray-50 col-span-2 p-5 rounded-2xl h-52' name='message' />
+                <input type="text" placeholder='Subject*' className={`bg-gray-50 col-span-2 p-5 rounded-2xl ${errors.find((element) => element = 'subject') && 'border border-rose-400'}`} name='subject' />
+                <textarea placeholder='Message*' className={`bg-gray-50 col-span-2 p-5 rounded-2xl h-52 ${errors.find((element) => element = 'message') && 'border border-rose-400'}`}  name='message' />
             </div>
             <RedirectButton className='mt-10' coloured={true}>
-                {messageStatus != '' ? <div className='cursor-default w-32 text-center'>{messageStatus}</div> : <button type="submit" className='cursor-pointer w-32 text-center'>Send Message</button>}
+                {messageStatus !== '' ? (
+                    <div className='cursor-default w-32 text-center'>{messageStatus}</div>
+                ) : (
+                    <button type="submit" className='cursor-pointer w-32 text-center'>Send Message</button>
+                )}
             </RedirectButton>
         </form>
-    )
-}
-
-interface inputFormProps {
-    firstname?: string;
-    lastname?: string;
-    email?: string;
-    phone?: string;
-    subject?: string;
-    message?: string;
-}
+    );
+};
 
 export default Contact

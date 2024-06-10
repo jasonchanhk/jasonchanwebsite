@@ -1,5 +1,4 @@
 import { ReactNode } from 'react'
-import { IconContext } from "react-icons";
 import { IoChevronForward } from 'react-icons/io5'
 
 interface RedirectButtonProps {

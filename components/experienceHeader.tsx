@@ -20,7 +20,7 @@ const ExperienceHeader = () => {
       <div className='absolute inset-0 font-extrabold text-7xl md:text-8xl w-full text-gray-50 z-0'>
         ducation & Work Experience My education
       </div>
-      <div className='absolute z-40 inset-0 mx-auto flex justify-center'>
+      <div className='absolute z-40 inset-0 mx-auto px-6 md:flex md:justify-center'>
         <div className='flex-col'>
           <div className='font-semibold text-2xl underline tracking-wider underline-offset-8 z-40 pt-10 md:pt-0'>02. </div>
           <div className='font-bold text-4xl md:text-6xl mt-2 tracking-wide z-40 text-wrap'>

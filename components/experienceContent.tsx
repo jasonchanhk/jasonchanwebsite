@@ -1,11 +1,9 @@
 import { useState } from "react";
 import styles from '../styles/Home.module.css';
 
-import { IconContext } from "react-icons";
+import { IoChevronBack } from 'react-icons/io5'
 import { IoSchool } from "react-icons/io5";
 import { MdOutlineWork } from "react-icons/md";
-
-import ExperienceModal from "./experienceModal";
 
 
 export interface experienceItemsProps {
@@ -58,7 +56,7 @@ const workExpItems: Array<experienceItemsProps> = [
         place: 'Eastern District Council',
         skills: [
             "Founded the pandemic support program and facilitated cross-government collaboration. Vetting for the working group to ensure fair use of emergency reserve.",
-            "Actively consulted community stakeholders' opinions in social events such as parent-teacher day, cyclist events, and knitting workshops. Ensuring quality first-hand advice from all walks of life.",
+            "Collected stakeholders' opinions in community events such as parent-teacher day, cyclist gathering, and knitting workshops. Ensuring quality first-hand advice from all walks of life.",
             "Advised on council’s public facilities improvement projects, revamping youth center, sport ground, and roads"
         ]
     }
@@ -92,24 +90,52 @@ const educationExpItems: Array<experienceItemsProps> = [
 ]
 
 const ItemsList = ({ items }: itemsListProps) => {
+
+    const [experienceItem, setExperienceItem] = useState<experienceItemsProps | null>(null);
+
     return (
         <div>
-            {items.map((item, index) => {
-                return (
-                    <ExperienceModal key={index} className={`text-black ${item.skills ? 'cursor-pointer hover:text-gray-500' : ''}`} item={item}>
-                        <div className='flex flex-col md:flex-row mb-4 md:mb-8 justify-between'>
+            {
+                experienceItem
+                    ?
+                    <div>
+                        <div className='flex md:flex-row mb-4 md:mb-8 justify-between'>
                             <div className='flex flex-col'>
-                                <h2 className="text-md md:text-2xl font-medium md:pb-2">{item.title}</h2>
-                                <h3 className='text-sm md:text-lg font-light'>{item.place}</h3>
+                                <h2 className="text-md md:text-2xl font-medium md:pb-2">{experienceItem.title}</h2>
+                                <h3 className='text-sm md:text-lg font-light'>{experienceItem.place} / {experienceItem.fromMonth} {experienceItem.fromYear} - {experienceItem.toMonth} {experienceItem.toYear}</h3>
+                                <div className='text-sm md:text-base font-light'></div>
                             </div>
 
-                            <div className='flex text-sm font-light md:text-lg md:text-right md:font-medium md:bg-white md:rounded-lg md:p-2 h-fit w-fit'>
-                                <div>{item.fromYear} - {item.toYear}</div>
+                            <div className='rounded-full bg-lime-400 text-white p-2 md:text-lg h-fit w-fit cursor-pointer'>
+                                <IoChevronBack onClick={() => setExperienceItem(null)} />
                             </div>
                         </div>
-                    </ExperienceModal>
-                )
-            })}
+                        <ul className="list-disc pl-5 text-xs md:text-sm">
+                            {experienceItem.skills?.map((skill, index) => {
+                                return (
+                                    <li className="py-1 text-balance" key={index}>{skill}</li>
+                                )
+                            })}
+                        </ul>
+                    </div>
+                    :
+                    <div>{items.map((item, index) => {
+                        return (
+                            <div key={index} className={`text-black ${item.skills ? 'cursor-pointer hover:text-gray-500' : ''}`} onClick={() => item.skills && setExperienceItem(item)}>
+                                <div className='flex flex-col md:flex-row mb-4 md:mb-8 justify-between'>
+                                    <div className='flex flex-col'>
+                                        <h2 className="text-md md:text-2xl font-medium md:pb-2">{item.title}</h2>
+                                        <h3 className='text-sm md:text-lg font-light'>{item.place}</h3>
+                                    </div>
+
+                                    <div className='flex text-sm font-light md:text-lg md:text-right md:font-medium md:bg-white md:rounded-lg md:p-2 h-fit w-fit'>
+                                        <div>{item.fromYear} - {item.toYear}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        )
+                    })}</div>
+            }
         </div>
     )
 }
