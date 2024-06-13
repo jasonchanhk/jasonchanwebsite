@@ -1,6 +1,5 @@
 import React, { ReactNode, useState, useEffect } from 'react'
 import Head from 'next/head'
-import Hotjar from '@hotjar/browser';
 
 import { Link as Scrolllink } from 'react-scroll'
 import { FiMenu, FiX } from 'react-icons/fi'
@@ -32,9 +31,6 @@ const Layout = ({ children, title }: Props) => {
         }
     }, [scroll.y, scroll.lastY]);
 
-    useEffect(() => {
-        Hotjar.init(5023668, 6);
-    }, [])
     return (
         <div className='relative tracking-wide'>
             <Head>
