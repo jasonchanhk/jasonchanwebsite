@@ -1,14 +1,11 @@
 import React, { ReactNode, useState, useEffect } from 'react'
 import Head from 'next/head'
-import { Analytics } from '@vercel/analytics/react';
 
 import { Link as Scrolllink } from 'react-scroll'
 import { FiMenu, FiX } from 'react-icons/fi'
 import { IconContext } from "react-icons";
 import useScrollListener from "../hooks/useScrollListener";
 import styles from './layout.module.css'
-
-import Hotjar from '@hotjar/browser';
 
 type Props = {
     children?: ReactNode
@@ -34,9 +31,6 @@ const Layout = ({ children, title }: Props) => {
         }
     }, [scroll.y, scroll.lastY]);
 
-    useEffect(() => {
-        Hotjar.init(Number(process.env.NEXT_PUBLIC_HOTJAR_SITEID), Number(process.env.NEXT_PUBLIC_HOTJAR_VERSION));
-    })
     return (
         <div className='relative tracking-wide'>
             <Head>
@@ -112,7 +106,6 @@ const Layout = ({ children, title }: Props) => {
             {/* children, can be disable when sidebar opened */}
             <div className={`${showSidebar ? 'blur-sm overflow-hidden pointer-events-none' : 'blur-none'}`}>
                 {children}
-                <Analytics />
             </div>
         </div >
 
