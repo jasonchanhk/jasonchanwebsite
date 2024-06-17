@@ -85,23 +85,23 @@ const ContactList = () => {
                     <div className='pl-2'>chanjky97@gmail.com</div>
                 </div>
 
-                <Link passHref href="https://github.com/jasonchanhk">
+                <a href="https://github.com/jasonchanhk" target="_blank" rel="noreferrer">
                     <div className='flex items-center cursor-pointer w-fit'>
                         <div className='w-10 h-10 md:w-14 md:h-14 rounded-full bg-lime-500 hover:bg-lime-400 border-2 border-white flex justify-center items-center'>
                             <FiGithub />
                         </div>
                         <div className='pl-2'>github.com/jasonchanhk</div>
                     </div>
-                </Link>
+                </a>
 
-                <Link passHref href="https://www.linkedin.com/in/jason-chan-361266217/">
+                <a href="www.linkedin.com/in/jasonchanky" target="_blank" rel="noreferrer">
                     <div className='flex items-center cursor-pointer w-fit'>
                         <div className='w-10 h-10 md:w-14 md:h-14 rounded-full bg-lime-500 hover:bg-lime-400 border-2 border-white flex justify-center items-center'>
                             <FiLinkedin />
                         </div>
                         <div className='pl-2'>linkedin.com/in/jasonchanky</div>
                     </div>
-                </Link>
+                </a>
 
                 <div className='flex items-center w-fit'>
                     <div className='w-10 h-10 md:w-14 md:h-14 rounded-full bg-lime-500 border-2 border-white flex justify-center items-center'>

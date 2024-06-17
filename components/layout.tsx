@@ -61,7 +61,7 @@ const Layout = ({ children, title }: Props) => {
                                 )
                             })
                         }
-                        <a href='Jason Chan Resume 2024.pdf'>
+                        <a href='Jason Chan (Software Enginner).pdf'>
                             <button className='px-8 py-2 rounded-full text-white bg-lime-500 font-medium hover:bg-lime-400'>
                                 Resume
                             </button>

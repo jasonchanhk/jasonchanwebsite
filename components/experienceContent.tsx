@@ -29,9 +29,10 @@ const workExpItems: Array<experienceItemsProps> = [
         title: 'Associate Developer',
         place: 'Yoox Net-A-Porter Group',
         skills: [
-            "Revised our customised bulk reserve and promotion offers features on Salesforce, allowing our agent to personalise deals and discounts for VIPs",
-            "Introduced performance monitoring metrics into casework, provided tracking statistics on reference articles usage and case closing efficiency",
-            "Handled general user inquiries, analyzed and discovered new bugs. Documented all findings to enrich team knowledge"
+            "Reworked customised reservation system and promotion code functionality to provide more flexible service for high-spending customer",
+            "Introduced performance monitoring metrics into casework,  tracked reply template usage and case closing efficiency",
+            "Managed user inquiries, bug analysis, and knowledge documentation",
+            "Conducted testing and application of release updates"
         ]
     },
     {
@@ -42,9 +43,9 @@ const workExpItems: Array<experienceItemsProps> = [
         title: 'Frontend Developer Intern',
         place: 'Blokbot',
         skills: [
-            'Pair-programmed a new user dashboard visualizing live crypto market data, trading bot performance, and customer portfolio',
-            'Researched on user management services migration, created report analyzing JWT, Auth0 and AWS Cognito',
-            'Updated company’s React-Next-Typescript homepage interface regularly, discussed implementation with web designer'
+            'Maintained and updated company’s React-Next-Typescript homepage interface in collaboration with the web designer',
+            'Pair-programmed a new user dashboard to display live crypto market data, trading bot performance, and customer portfolio',
+            'Contributed to the migration of user management services by conducting a proof-of-concept report analyzing JWT, Auth0 and AWS Cognito'
         ]
     },
     {
@@ -55,18 +56,18 @@ const workExpItems: Array<experienceItemsProps> = [
         title: 'District Councilor ',
         place: 'Eastern District Council',
         skills: [
-            "Founded the pandemic support program and facilitated cross-government collaboration. Vetting for the working group to ensure fair use of emergency reserve.",
-            "Collected stakeholders' opinions in community events such as parent-teacher day, cyclist gathering, and knitting workshops. Ensuring quality first-hand advice from all walks of life.",
-            "Advised on council’s public facilities improvement projects, revamping youth center, sport ground, and roads"
+            "Founded the pandemic support program and facilitated cross-government collaboration, overseeing task force expenses for fair budget use",
+            "Engaged community stakeholders through themed activities like as cyclist gatherings and school drama for elderly home, enhancing neighborhood relations and gathering direct feedback",
+            "Provided counsel on public facilities improvement projects including the revitalization of the youth center, sport ground, and roads"
         ]
     }
 ]
 
 const educationExpItems: Array<experienceItemsProps> = [
     {
-        fromYear: '2021',
+        fromYear: '2022',
         fromMonth: 'Jun',
-        toYear: '2021',
+        toYear: '2022',
         toMonth: 'Nov',
         title: 'Technical Trainee',
         place: 'La Fosse Academy'
@@ -76,7 +77,7 @@ const educationExpItems: Array<experienceItemsProps> = [
         fromMonth: 'Jun',
         toYear: '2021',
         toMonth: 'Nov',
-        title: 'Self-taught Programming',
+        title: 'Bootcamp Certification',
         place: 'Coursera'
     },
     {
