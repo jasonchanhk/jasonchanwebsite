@@ -94,7 +94,7 @@ const ContactList = () => {
                     </div>
                 </a>
 
-                <a href="www.linkedin.com/in/jasonchanky" target="_blank" rel="noreferrer">
+                <a href="https://www.linkedin.com/in/jasonchanky" target="_blank" rel="noreferrer">
                     <div className='flex items-center cursor-pointer w-fit'>
                         <div className='w-10 h-10 md:w-14 md:h-14 rounded-full bg-lime-500 hover:bg-lime-400 border-2 border-white flex justify-center items-center'>
                             <FiLinkedin />
