@@ -179,12 +179,12 @@ const MessageForm = () => {
     return (
         <form ref={form} onSubmit={handleSubmit}>
             <div className='grid md:grid-cols-2 gap-5'>
-                <input type="text" placeholder='First Name*' className={`bg-gray-50 p-5 rounded-2xl ${errors.find((element) => element = 'firstname') && 'border border-rose-400'}`} name='firstname' />
+                <input type="text" placeholder='First Name*' className={`bg-gray-50 p-5 rounded-2xl ${errors.find((element) => element == 'firstname') && 'border border-rose-400'}`} name='firstname' />
                 <input type="text" placeholder='Last Name' className='bg-gray-50 p-5 rounded-2xl' name='lastname' />
-                <input type="text" placeholder='Email*' className={`bg-gray-50 p-5 rounded-2xl ${errors.find((element) => element = 'email') && 'border border-rose-400'}`} name='email' />
+                <input type="text" placeholder='Email*' className={`bg-gray-50 p-5 rounded-2xl ${errors.find((element) => element == 'email') && 'border border-rose-400'}`} name='email' />
                 <input type="text" placeholder='Phone Number' className='bg-gray-50 p-5 rounded-2xl' name='phone' />
-                <input type="text" placeholder='Subject*' className={`bg-gray-50 col-span-2 p-5 rounded-2xl ${errors.find((element) => element = 'subject') && 'border border-rose-400'}`} name='subject' />
-                <textarea placeholder='Message*' className={`bg-gray-50 col-span-2 p-5 rounded-2xl h-52 ${errors.find((element) => element = 'message') && 'border border-rose-400'}`}  name='message' />
+                <input type="text" placeholder='Subject*' className={`bg-gray-50 col-span-2 p-5 rounded-2xl ${errors.find((element) => element == 'subject') && 'border border-rose-400'}`} name='subject' />
+                <textarea placeholder='Message*' className={`bg-gray-50 col-span-2 p-5 rounded-2xl h-52 ${errors.find((element) => element == 'message') && 'border border-rose-400'}`}  name='message' />
             </div>
             <RedirectButton className='mt-10' coloured={true}>
                 {messageStatus !== '' ? (
