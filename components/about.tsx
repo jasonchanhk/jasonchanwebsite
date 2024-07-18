@@ -79,7 +79,7 @@ const About = () => {
                     <AboutTitle />
                     <SelfIntroduction />
                     <RedirectButton coloured={false}>
-                        <a href="Jason Chan (Software Enginner).pdf" target="_blank" rel="noreferrer">Download Resume</a>
+                        <a href="Jason Chan (Software Engineer).pdf" target="_blank" rel="noreferrer">Download Resume</a>
                     </RedirectButton>
                 </div>
             </div>
