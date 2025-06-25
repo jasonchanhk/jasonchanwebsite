@@ -22,17 +22,28 @@ interface itemsListProps {
 
 const workExpItems: Array<experienceItemsProps> = [
     {
+        fromYear: '2024',
+        fromMonth: 'Nov',
+        toYear: '2025',
+        toMonth: 'Jul',
+        title: 'Software Engineer',
+        place: 'Stackcrafters @ Go Eve',
+        skills: [
+            "Built a two-way access request workflow that enables users to request access or admins to invite users joining the client with predefined permissions",
+            "Captured hardware alert from MQTT server and presented them on our internal admin console, triggering further notifications to Microsoft Teams channel on critical issues",
+            "Disabled permanent data deletion with archived and unarchived logic to improve fault analysis and accountability"
+        ]
+    },{
         fromYear: '2022',
         fromMonth: 'Nov',
         toYear: '2024',
-        toMonth: 'Dec',
+        toMonth: 'Oct',
         title: 'Associate Developer',
-        place: 'Yoox Net-A-Porter Group',
+        place: 'La Fosse @ Yoox Net-A-Porter Group',
         skills: [
-            "Reworked customised reservation system and promotion code functionality to provide more flexible service for high-spending customer",
-            "Introduced performance monitoring metrics into casework,  tracked reply template usage and case closing efficiency",
-            "Managed user inquiries, bug analysis, and knowledge documentation",
-            "Conducted testing and application of release updates"
+            "Restructured legacy service level provision logic, allowing new loyalty tier to be created and assigned with the right level of support",
+            "Introduced performance monitoring metrics into case management, tracked reply template usage, and case closing efficiency",
+            "Organised case assignment rules from business, accommodated planned outstanding occasions or unpredicted emergencies"
         ]
     },
     {
@@ -43,9 +54,9 @@ const workExpItems: Array<experienceItemsProps> = [
         title: 'Frontend Developer Intern',
         place: 'Blokbot',
         skills: [
-            'Maintained and updated company’s React-Next-Typescript homepage interface in collaboration with the web designer',
-            'Pair-programmed a new user dashboard to display live crypto market data, trading bot performance, and customer portfolio',
-            'Contributed to the migration of user management services by conducting a proof-of-concept report analyzing JWT, Auth0 and AWS Cognito'
+            'Applied regular UI updates to the company home page using React, Next, and TypeScript',
+            'Integrated live crypto market data, trading bot performance, and customer portfolio to user dashboard',
+            'Conducted a proof-of-concept on migrating our user management service to Auth0 or AWS Cognito'
         ]
     },
     {
@@ -53,17 +64,24 @@ const workExpItems: Array<experienceItemsProps> = [
         fromMonth: 'Jan',
         toYear: '2021',
         toMonth: 'Jun',
-        title: 'District Councilor ',
+        title: 'District Councilor',
         place: 'Eastern District Council',
         skills: [
-            "Founded the pandemic support program and facilitated cross-government collaboration, overseeing task force expenses for fair budget use",
-            "Engaged community stakeholders through themed activities like as cyclist gatherings and school drama for elderly home, enhancing neighborhood relations and gathering direct feedback",
-            "Provided counsel on public facilities improvement projects including the revitalization of the youth center, sport ground, and roads"
+            "Coordinated the pandemic support program and facilitated cross-government collaboration, overseeing task force expenses",
+            "Engaged frequently with community stakeholders through council activities, collected direct public feedback on government policy"
         ]
     }
 ]
 
 const educationExpItems: Array<experienceItemsProps> = [
+    {
+        fromYear: '2025',
+        fromMonth: 'Jan',
+        toYear: '2025',
+        toMonth: 'Apr',
+        title: 'Certified Cloud Practitioner',
+        place: 'AWS Certification'
+    },
     {
         fromYear: '2022',
         fromMonth: 'Jun',
@@ -71,14 +89,6 @@ const educationExpItems: Array<experienceItemsProps> = [
         toMonth: 'Nov',
         title: 'Technical Trainee',
         place: 'La Fosse Academy'
-    },
-    {
-        fromYear: '2021',
-        fromMonth: 'Jun',
-        toYear: '2021',
-        toMonth: 'Nov',
-        title: 'Bootcamp Certification',
-        place: 'Coursera'
     },
     {
         fromYear: '2015',
@@ -136,7 +146,7 @@ const ItemsList = ({ items }: itemsListProps) => {
                                     </div>
 
                                     <div className='flex text-sm font-light md:text-lg md:text-right md:font-medium md:bg-white md:rounded-lg md:p-2 h-fit w-fit'>
-                                        <div>{item.fromYear} - {item.toYear}</div>
+                                        <div>{item.fromYear === item.toYear ? `${item.fromYear}`: `${item.fromYear} - ${item.toYear}`}</div>
                                     </div>
                                 </div>
                             </div>

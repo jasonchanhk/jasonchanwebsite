@@ -7,11 +7,11 @@ import RedirectButton from "./redirectButton";
 const SelfIntroduction = () => {
     return (
         <div className="md:pr-12 md:text-base text-sm leading-snug mb-6 md:mb-12">
-            <p className="">I’m a software engineer with 2+ years of industry experience, focusing on JavaScript and object-oriented programming. </p>
+            <p className="">I’m a Full Stack Software Engineer with 3+ years of hands-on experience building scalable, end-to-end solutions using TypeScript, React, and Node.js. </p>
             <br />
-            <p>I don’t just stick to the technical side; My background in community work helps me to look at the bigger picture. It allows me to easily talk to different people and explain complex ideas to them.</p>
+            <p>I take pride in writing clean, high-standard code and enjoy solving challenging problems that create real impact for teams and users alike. </p>
             <br />
-            <p>I maintain an active lifestyle and constantly challenge myself with new experiences. I approach everything with a positive mindset, always looking for opportunities to grow and improve.</p>
+            <p>Outside work I keep an active lifestyle and eager to try anything new. I approach things in a positive mindset, and always focus on growth and improvement.</p>
         </div>
     )
 }
@@ -79,7 +79,7 @@ const About = () => {
                     <AboutTitle />
                     <SelfIntroduction />
                     <RedirectButton coloured={false}>
-                        <a href="Jason Chan (Software Engineer).pdf" target="_blank" rel="noreferrer">Download Resume</a>
+                        <a href="Jason Chan Resume (2025).pdf" target="_blank" rel="noreferrer">Download Resume</a>
                     </RedirectButton>
                 </div>
             </div>
